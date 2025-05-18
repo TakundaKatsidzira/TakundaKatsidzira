@@ -2,56 +2,56 @@ TAKUNDA KATSIDZIRA
 CODE 
 
 GOALS
-  Learn Python
-  Learn OOP and Data Structures and Algorithms
-  Complete Project
+  Learn Python;
+  Learn OOP and Data Structures and Algorithms;
+  Complete Project;
 
 COURSES
-  CS50P
-  CS50AI
+  CS50P;
+  CS50AI;
 
 BOOKS
-  Automate The Boring Stuff With Python
-  Beyond The Basic Stuff In Python
+  Automate The Boring Stuff With Python;
+  Beyond The Basic Stuff In Python;
 
 DATA STRUCTURES AND ALGORITHMS
-  Algorithm Analysis
-  Arrays and Hashing
-  Stacks and Queues
-  Linked Lists
-  Searching, Sorting and Recursion
-  Two Pointers, Fast and Slow Pointers and Sliding Window
-  Merge Intervals
-  Cyclic Sort
-  Subsets
-  Modified Binary Search
-  Prefix Sum
-  Monotonic Stack
-  In Place Reversal Of Linked List
+  Algorithm Analysis;
+  Arrays and Hashing;
+  Stacks and Queues;
+  Linked Lists;
+  Searching, Sorting and Recursion;
+  Two Pointers, Fast and Slow Pointers and Sliding Window;
+  Merge Intervals;
+  Cyclic Sort;
+  Subsets;
+  Modified Binary Search;
+  Prefix Sum;
+  Monotonic Stack;
+  In Place Reversal Of Linked List;
   
-  Trees and Tries
-  Heaps
-  Graphs
-  Breadth and Depth First Search
-  Two Heaps
-  Top K Elements
-  K way Merge
-  Backtracking
-  Dynamic Programming
-  Greedy Algorithms
-  Topological Sort
-  Matrix Traversal
+  Trees and Tries;
+  Heaps;
+  Graphs;
+  Breadth and Depth First Search;
+  Two Heaps;
+  Top K Elements;
+  K way Merge;
+  Backtracking;
+  Dynamic Programming;
+  Greedy Algorithms;
+  Topological Sort;
+  Matrix Traversal;
   
-  Bit Manipulation
-  BITWISE XOR
+  Bit Manipulation;
+  BITWISE XOR;
 
 LEETCODE
-  Blind 75
-  Neetcode 150
+  Blind 75;
+  Neetcode 150;
 
 
 PROJECT
-    DASHER
+    DASHER;
     
   Dasher is a dynamic, graph-based delivery simulation game where a Dasher navigates a city to accept, pick up, and deliver orders while optimizing for       
   distance, time, and profit. The game introduces real-time decision-making under changing road and traffic conditions, with a limited unit budget determining 
