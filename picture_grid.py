@@ -1,0 +1,1 @@
+"""Picture grid assignment"""
