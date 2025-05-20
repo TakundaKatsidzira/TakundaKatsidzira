@@ -19,8 +19,8 @@ def comma_code(items):
 def main():
     # Example usage
     food = ['apples', 'bananas', 'tofu', 'cats']
-    print(comma_code(food))  # Output: apples, bananas, tofu, and cats
-    print("eh")
+    print("There's", comma_code(food))  # Output: apples, bananas, tofu, and cats
+    
 
 if __name__ == "__main__":
     main()

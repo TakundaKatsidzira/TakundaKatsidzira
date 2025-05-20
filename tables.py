@@ -6,6 +6,17 @@ and displays it in a well-organized table with each column right-justified.
 Assume all inner lists have the same number of strings.
 """
 
+def main():
+    # Example data
+    tableData = [
+        ['apples', 'oranges', 'cherries', 'banana'],
+        ['Alice', 'Bob', 'Carol', 'David'],
+        ['dogs', 'cats', 'moose', 'goose']
+    ]
+
+    # Run the function
+    printTable(tableData)
+
 def printTable(table):
     # Number of columns (lists)
     col_count = len(table)
@@ -21,12 +32,5 @@ def printTable(table):
             print(table[col][row].rjust(col_widths[col]), end=' ')
         print()  # Newline after each row
 
-# Example data
-tableData = [
-    ['apples', 'oranges', 'cherries', 'banana'],
-    ['Alice', 'Bob', 'Carol', 'David'],
-    ['dogs', 'cats', 'moose', 'goose']
-]
-
-# Run the function
-printTable(tableData)
+if __name__ == "__main__":
+    main()

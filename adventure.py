@@ -47,13 +47,7 @@ def main():
     stash = ['gold coin', 'dagger', 'gold coin', 'healing potion', 'ruby']
 
     # Game
-    print("\n--- Fantasy Inventory Manager ---")
     choices = ["2", "4", "3", "1", "5"]
-    print("1. View Inventory")
-    print("2. Add Item")
-    print("3. Drop Item")
-    print("4. Collect Loot")
-    print("5. Quit")
 
     for choice in choices:
         if choice == '1':
@@ -65,7 +59,7 @@ def main():
         elif choice == '4':
             collect_loot(player_inventory, stash)
         elif choice == '5':
-            print("Farewell, brave adventurer!")
+            print("Farewell")
             break
         else:
             print("Invalid choice. Please pick between 1 and 5.")

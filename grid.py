@@ -12,9 +12,8 @@ def transform(grid):
     for i in range(min(len(transposed), len(transposed[0]))):
         transposed[i][i] = 0
 
-    # Print the result
-    for row in transposed:
-        print(row)
+    return transposed
+
 
 def main():
     # Example usage
@@ -23,7 +22,8 @@ def main():
     [4, 5, 6],
     [7, 8, 9]
     ]
-    transform(grid)
+
+    print("A=", transform(grid))
 
 if __name__ == "__main__":
     main()
