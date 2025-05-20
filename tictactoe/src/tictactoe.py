@@ -111,63 +111,58 @@ class RandomAgent(Agent):
 
 class MinimaxAgent(Agent):
     """
-    Minimax agent with memoization (dynamic programming) to avoid
-    re-evaluating board states.
+    Minimax agent with memoization (dynamic programming) and randomized tie-breaking.
     """
 
     def __init__(self, symbol: str):
         super().__init__(symbol)
-        self.memo: Dict[Tuple[str, str], int] = {}  # (board_string, player) -> score
+        self.memo: Dict[Tuple[str, str], int] = {}
 
     def select_move(self, game: TicTacToe) -> int:
         best_score = float('-inf')
         best_moves = []
         for move in game.available_moves():
-            new_board = game.board.copy()
-            new_board[move] = self.symbol
-            score = self._minimax(new_board, self._opponent(self.symbol), False)
+            game.board[move] = self.symbol
+            score = self._minimax(game, self._opponent(self.symbol), False)
+            game.board[move] = ' '
             if score > best_score:
                 best_score = score
                 best_moves = [move]
             elif score == best_score:
                 best_moves.append(move)
-        return random.choice(best_moves)  # randomly pick among best moves
+        return random.choice(best_moves)
 
-    def _minimax(self, board: List[str], player: str, is_maximizing: bool) -> int:
-        board_key = ''.join(board)
+    def _minimax(self, game: TicTacToe, player: str, is_maximizing: bool) -> int:
+        board_key = ''.join(game.board)
         memo_key = (board_key, player)
         if memo_key in self.memo:
             return self.memo[memo_key]
 
-        winner = self._check_winner_static(board)
+        winner = self._check_winner_static(game.board)
         if winner == self.symbol:
             return 1
         elif winner == self._opponent(self.symbol):
             return -1
-        elif ' ' not in board:
+        elif ' ' not in game.board:
             return 0
-
-        empty_positions = [i for i, spot in enumerate(board) if spot == ' ']
-        random.shuffle(empty_positions)  # Shuffle positions to introduce randomness
 
         if is_maximizing:
             best_score = float('-inf')
-            for i in empty_positions:
-                board[i] = player
-                score = self._minimax(board, self._opponent(player), False)
-                board[i] = ' '
+            for i in game.available_moves():
+                game.board[i] = player
+                score = self._minimax(game, self._opponent(player), False)
+                game.board[i] = ' '
                 best_score = max(best_score, score)
-            self.memo[memo_key] = best_score
-            return best_score
         else:
             best_score = float('inf')
-            for i in empty_positions:
-                board[i] = player
-                score = self._minimax(board, self._opponent(player), True)
-                board[i] = ' '
+            for i in game.available_moves():
+                game.board[i] = player
+                score = self._minimax(game, self._opponent(player), True)
+                game.board[i] = ' '
                 best_score = min(best_score, score)
-            self.memo[memo_key] = best_score
-            return best_score
+
+        self.memo[memo_key] = best_score
+        return best_score
 
     def _check_winner_static(self, board: List[str]) -> Optional[str]:
         for combo in TicTacToe.WINNING_COMBINATIONS:
