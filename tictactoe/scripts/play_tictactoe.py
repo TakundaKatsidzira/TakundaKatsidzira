@@ -1,8 +1,9 @@
 # scripts/play_tictactoe.py
 import csv
 import os
+import random
 from datetime import datetime
-from src.tictactoe import TicTacToe, RandomAgent, MinimaxAgent
+from src.tictactoe import TicTacToe, RandomAgent, MinimaxAgent  # Keep MinimaxAgent imported
 
 LOG_FILE = os.path.join(os.path.dirname(__file__), '../data/game_logs.csv')
 
@@ -31,8 +32,8 @@ def log_game(game: TicTacToe, first_player: str):
             game.win_method if game.win_method else "None"
         ])
 
-def play_game(agent_x, agent_o, verbose=True) -> TicTacToe:
-    game = TicTacToe(starting_player='X')
+def play_game(agent_x, agent_o, starting_player, verbose=True) -> TicTacToe:
+    game = TicTacToe(starting_player=starting_player)
     if verbose:
         print("Starting new TicTacToe game:")
         print(game)
@@ -55,15 +56,23 @@ def play_game(agent_x, agent_o, verbose=True) -> TicTacToe:
 def main():
     init_log_file()
 
-    # Example: RandomAgent vs MinimaxAgent
-    agent_x = RandomAgent('X')
-    agent_o = MinimaxAgent('O')
-
     NUM_GAMES = 10000
     for i in range(NUM_GAMES):
-        print(f"Game {i+1}/{NUM_GAMES}")
-        game = play_game(agent_x, agent_o, verbose=False)
-        log_game(game, first_player='X')
+        first_player = random.choice(['X', 'O'])
+
+        # Both agents are RandomAgent here, but easy to swap MinimaxAgent
+        agent_x = RandomAgent('X')
+        agent_o = RandomAgent('O')
+
+        # Example of swapping to MinimaxAgent:
+        # agent_x = MinimaxAgent('X')
+        # agent_o = MinimaxAgent('O')
+
+        print(f"Game {i+1}/{NUM_GAMES} - First player: {first_player}")
+
+        game = play_game(agent_x, agent_o, starting_player=first_player, verbose=False)
+        log_game(game, first_player=first_player)
+
     print(f"{NUM_GAMES} games simulated and logged to {LOG_FILE}")
 
 if __name__ == "__main__":
