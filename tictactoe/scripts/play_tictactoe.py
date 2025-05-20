@@ -10,13 +10,13 @@ LOG_FILE = os.path.join(os.path.dirname(__file__), '../data/game_logs.csv')
 def init_log_file():
     if not os.path.exists(os.path.dirname(LOG_FILE)):
         os.makedirs(os.path.dirname(LOG_FILE))
-    if not os.path.isfile(LOG_FILE):
-        with open(LOG_FILE, mode='w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                "timestamp", "first_player", "winner", "is_draw",
-                "first_move_position", "move_sequence", "num_moves", "win_method"
-            ])
+    # Always overwrite
+    with open(LOG_FILE, mode='w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "timestamp", "first_player", "winner", "is_draw",
+            "first_move_position", "move_sequence", "num_moves", "win_method"
+        ])
 
 def log_game(game: TicTacToe, first_player: str):
     with open(LOG_FILE, mode='a', newline='') as f:
