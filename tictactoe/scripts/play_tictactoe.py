@@ -61,7 +61,7 @@ def main():
 
         # Both agents are RandomAgent here, but easy to swap MinimaxAgent
         agent_x = RandomAgent('X')
-        agent_o = RandomAgent('O')
+        agent_o = MinimaxAgent('O')
 
         # Example of swapping to MinimaxAgent:
         # agent_x = MinimaxAgent('X')
