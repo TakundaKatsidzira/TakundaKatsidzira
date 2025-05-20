@@ -2,10 +2,8 @@ import pandas as pd
 
 def analyze_tictactoe_data(csv_path):
     # Load CSV
-    df = pd.read_csv(csv_path, header=None, names=[
-        'timestamp', 'first_player', 'winner', 'is_draw',
-        'first_move_pos', 'move_sequence', 'num_moves', 'win_method'
-    ])
+    df = pd.read_csv(csv_path)
+    
 
     # Convert types
     df['timestamp'] = pd.to_datetime(df['timestamp'])
