@@ -59,13 +59,17 @@ def main():
     for i in range(NUM_GAMES):
         first_player = random.choice(['X', 'O'])
 
-        # Both agents are RandomAgent here, but easy to swap MinimaxAgent
-        agent_x = RandomAgent('X')
-        agent_o = MinimaxAgent('O')
+        # Both agents are RandomAgent here
+        # agent_x = RandomAgent('X')
+        # agent_o = RandomAgent('O')
 
-        # Example of swapping to MinimaxAgent:
-        # agent_x = MinimaxAgent('X')
+        # RandomAgent against MiniMax here
+        # agent_x = RandomAgent('X')
         # agent_o = MinimaxAgent('O')
+
+        # Both MiniMax
+         agent_x = MinimaxAgent('X')
+         agent_o = MinimaxAgent('O')
 
         print(f"Game {i+1}/{NUM_GAMES} - First player: {first_player}")
 
