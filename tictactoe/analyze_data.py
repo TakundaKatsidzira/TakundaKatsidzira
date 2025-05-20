@@ -1,7 +1,6 @@
 import pandas as pd
 
 def analyze_tictactoe_data(csv_path):
-    # Load CSV (headers already present in your file)
     df = pd.read_csv(csv_path)
 
     # Convert types
@@ -11,20 +10,19 @@ def analyze_tictactoe_data(csv_path):
     df['num_moves'] = df['num_moves'].astype(int)
     df['win_method'] = df['win_method'].fillna('None')
 
-    # Add first_player_won column
     df['first_player_won'] = (df['winner'] == df['first_player']) & (~df['is_draw'])
 
     total_games = len(df)
     print(f"Total games analyzed: {total_games}\n")
 
-    # Count how many times each player went first
+    # First player counts
     first_player_counts = df['first_player'].value_counts()
     print("First player counts:")
     for player in ['X', 'O']:
         count = first_player_counts.get(player, 0)
         print(f"  {player}: {count} times ({count / total_games:.2%})")
 
-    # Count first player wins for each first player identity
+    # First player win counts by player
     print("\nFirst player win counts by player:")
     for player in ['X', 'O']:
         went_first_df = df[df['first_player'] == player]
@@ -68,6 +66,26 @@ def analyze_tictactoe_data(csv_path):
     move_seq_lengths = df['move_sequence'].apply(lambda s: len(s.split('-')))
     print(f"\nMove sequence length: min {move_seq_lengths.min()}, max {move_seq_lengths.max()}, avg {move_seq_lengths.mean():.2f}")
 
+    # --- NEW: Analyze agent matchups ---
+    print("\nAgent matchups analysis:")
+
+    # Create a combined matchup label like "RandomAgent vs MinimaxAgent"
+    df['matchup'] = df['agent_X'] + " vs " + df['agent_O']
+
+    matchup_counts = df['matchup'].value_counts()
+    for matchup, count in matchup_counts.items():
+        print(f"\nMatchup: {matchup} - {count} games ({count / total_games:.2%})")
+
+        subset = df[df['matchup'] == matchup]
+        wins_X = (subset['winner'] == 'X').sum()
+        wins_O = (subset['winner'] == 'O').sum()
+        draws = subset['is_draw'].sum()
+        print(f"  Wins for X: {wins_X} ({wins_X / count:.2%})")
+        print(f"  Wins for O: {wins_O} ({wins_O / count:.2%})")
+        print(f"  Draws: {draws} ({draws / count:.2%})")
+
+        avg_moves_subset = subset['num_moves'].mean()
+        print(f"  Average moves: {avg_moves_subset:.2f}")
 
 if __name__ == "__main__":
     import sys
