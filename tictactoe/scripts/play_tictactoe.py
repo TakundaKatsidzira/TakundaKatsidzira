@@ -64,8 +64,7 @@ def play_game(agent_x, agent_o, starting_player, verbose=True) -> TicTacToe:
 
 def main():
     init_log_file()
-
-    NUM_GAMES = 10000
+    NUM_GAMES = 1000
     for i in range(NUM_GAMES):
         first_player = random.choice(['X', 'O'])
 
