@@ -1,4 +1,3 @@
-# scripts/play_tictactoe.py
 import csv
 import os
 import random
@@ -10,7 +9,7 @@ LOG_FILE = os.path.join(os.path.dirname(__file__), '../data/game_logs.csv')
 def init_log_file():
     if not os.path.exists(os.path.dirname(LOG_FILE)):
         os.makedirs(os.path.dirname(LOG_FILE))
-    # Always overwrite
+    # Always overwrite so header is consistent
     with open(LOG_FILE, mode='w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow([

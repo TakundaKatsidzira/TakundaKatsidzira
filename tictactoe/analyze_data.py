@@ -1,14 +1,13 @@
 import pandas as pd
 
 def analyze_tictactoe_data(csv_path):
-    # Load CSV
+    # Load CSV (headers already present in your file)
     df = pd.read_csv(csv_path)
-    
 
     # Convert types
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     df['is_draw'] = df['is_draw'].astype(bool)
-    df['first_move_pos'] = df['first_move_pos'].astype(int)
+    df['first_move_position'] = df['first_move_position'].astype(int)
     df['num_moves'] = df['num_moves'].astype(int)
     df['win_method'] = df['win_method'].fillna('None')
 
@@ -31,7 +30,8 @@ def analyze_tictactoe_data(csv_path):
         went_first_df = df[df['first_player'] == player]
         wins = went_first_df['first_player_won'].sum()
         total = len(went_first_df)
-        print(f"  {player} went first and won {wins} out of {total} games ({(wins / total) if total > 0 else 0:.2%})")
+        win_rate = (wins / total) if total > 0 else 0
+        print(f"  {player} went first and won {wins} out of {total} games ({win_rate:.2%})")
 
     # Win counts including draws
     win_counts = df['winner'].value_counts()
@@ -45,20 +45,21 @@ def analyze_tictactoe_data(csv_path):
     # Win methods
     print("\nWin method distribution (excluding draws):")
     win_methods = df.loc[~df['is_draw'], 'win_method'].value_counts()
+    total_wins = total_games - draws
     for method, count in win_methods.items():
-        print(f"  {method}: {count} ({count / (total_games - draws):.2%})")
+        print(f"  {method}: {count} ({count / total_wins:.2%})")
 
     # First player win rate
     first_player_wins = df['first_player_won'].sum()
     print(f"\nOverall first player win rate: {first_player_wins / total_games:.2%}")
-    print(f"First player wins (excluding draws): {first_player_wins} out of {total_games - draws} games")
+    print(f"First player wins (excluding draws): {first_player_wins} out of {total_wins} games")
 
     # Average number of moves
     avg_moves = df['num_moves'].mean()
     print(f"\nAverage number of moves per game: {avg_moves:.2f}")
 
     # Most common first moves
-    common_first_moves = df['first_move_pos'].value_counts().head(5)
+    common_first_moves = df['first_move_position'].value_counts().head(5)
     print("\nMost common first move positions:")
     for pos, count in common_first_moves.items():
         print(f"  Position {pos}: {count} times ({count / total_games:.2%})")
