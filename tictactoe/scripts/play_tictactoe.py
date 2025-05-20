@@ -75,5 +75,3 @@ def main():
 
     print(f"{NUM_GAMES} games simulated and logged to {LOG_FILE}")
 
-if __name__ == "__main__":
-    main()
