@@ -52,6 +52,7 @@ def analyze_tictactoe_data(csv_path):
     # Move sequence length stats
     move_seq_lengths = df['move_sequence'].apply(lambda s: len(s.split('-')))
     print(f"\nMove sequence length: min {move_seq_lengths.min()}, max {move_seq_lengths.max()}, avg {move_seq_lengths.mean():.2f}")
+    PRINT("BOO")
 
 if __name__ == "__main__":
     import sys
