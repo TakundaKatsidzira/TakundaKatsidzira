@@ -1,1 +1,2 @@
- explorer
+Explorer
+A file explorer for creating, reading, updating, and deleting files/folders starting from a root directory. Includes user/owner permissions and role-based access. Command history and undo supported via a stack. Autocorrect for commands and paths using edit distance + dynamic programming. Trie stores valid commands and paths for fast prefix search and autocorrect. The filesystem is structured as a tree, and symbolic links (if supported) can introduce a DAG structure. Backtracking enables undo/redo of file operations. Heaps can identify top-N largest or most recent files.

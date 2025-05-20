@@ -1,1 +1,2 @@
- automod
+AutoMod
+A bot that continuously monitors and redacts personally identifiable information (PII) such as emails, phone numbers, and SSNs from incoming content streams (e.g., from https://jsonplaceholder.typicode.com/). Use tries to store and match common sensitive patterns (e.g., name parts, domains). Model complex PII patterns using finite automata (state machines as trees or graphs). Dynamic programming helps in pattern recognition and error-tolerant matching (e.g., misformatted PII). Heaps can rank detected PII by severity or confidence score (optional).

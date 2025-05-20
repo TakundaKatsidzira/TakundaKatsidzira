@@ -1,1 +1,2 @@
- tictactoe
+TicTacToe
+Game optimized for performance, where the computer plays itself using random choices (no strategy). Logs include: who played first, was it a draw, who won, did the first player win, first move position, full move sequence, number of moves, and win method (e.g., row_1, diag_anti) saved to a CSV file. Develop multiple computer agents with different strategies. Backtracking can be used to simulate future game states and evaluate optimal moves (e.g., using minimax). Dynamic programming can cache board evaluations to avoid redundant computation during simulations.
