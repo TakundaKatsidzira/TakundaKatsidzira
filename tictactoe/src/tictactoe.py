@@ -121,15 +121,17 @@ class MinimaxAgent(Agent):
 
     def select_move(self, game: TicTacToe) -> int:
         best_score = float('-inf')
-        best_move = None
+        best_moves = []
         for move in game.available_moves():
             new_board = game.board.copy()
             new_board[move] = self.symbol
             score = self._minimax(new_board, self._opponent(self.symbol), False)
             if score > best_score:
                 best_score = score
-                best_move = move
-        return best_move
+                best_moves = [move]
+            elif score == best_score:
+                best_moves.append(move)
+        return random.choice(best_moves)  # randomly pick among best moves
 
     def _minimax(self, board: List[str], player: str, is_maximizing: bool) -> int:
         board_key = ''.join(board)
@@ -145,24 +147,25 @@ class MinimaxAgent(Agent):
         elif ' ' not in board:
             return 0
 
+        empty_positions = [i for i, spot in enumerate(board) if spot == ' ']
+        random.shuffle(empty_positions)  # Shuffle positions to introduce randomness
+
         if is_maximizing:
             best_score = float('-inf')
-            for i, spot in enumerate(board):
-                if spot == ' ':
-                    board[i] = player
-                    score = self._minimax(board, self._opponent(player), False)
-                    board[i] = ' '
-                    best_score = max(best_score, score)
+            for i in empty_positions:
+                board[i] = player
+                score = self._minimax(board, self._opponent(player), False)
+                board[i] = ' '
+                best_score = max(best_score, score)
             self.memo[memo_key] = best_score
             return best_score
         else:
             best_score = float('inf')
-            for i, spot in enumerate(board):
-                if spot == ' ':
-                    board[i] = player
-                    score = self._minimax(board, self._opponent(player), True)
-                    board[i] = ' '
-                    best_score = min(best_score, score)
+            for i in empty_positions:
+                board[i] = player
+                score = self._minimax(board, self._opponent(player), True)
+                board[i] = ' '
+                best_score = min(best_score, score)
             self.memo[memo_key] = best_score
             return best_score
 
