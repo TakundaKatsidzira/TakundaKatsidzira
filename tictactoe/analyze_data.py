@@ -14,6 +14,9 @@ def analyze_tictactoe_data(csv_path):
     df['num_moves'] = df['num_moves'].astype(int)
     df['win_method'] = df['win_method'].fillna('None')
 
+    # Add first_player_won column
+    df['first_player_won'] = (df['winner'] == df['first_player']) & (~df['is_draw'])
+
     total_games = len(df)
     print(f"Total games analyzed: {total_games}\n")
 
@@ -27,13 +30,14 @@ def analyze_tictactoe_data(csv_path):
         print(f"  {label}: {count} ({count / total_games:.2%})")
 
     print("\nWin method distribution (excluding draws):")
-    win_methods = df.loc[df['is_draw'] == False, 'win_method'].value_counts()
+    win_methods = df.loc[~df['is_draw'], 'win_method'].value_counts()
     for method, count in win_methods.items():
         print(f"  {method}: {count} ({count / (total_games - draws):.2%})")
 
-    # First player advantage
-    first_player_wins = df[df['winner'] == df['first_player']]
-    print(f"\nFirst player win rate: {len(first_player_wins) / total_games:.2%}")
+    # First player win info
+    first_player_wins = df['first_player_won'].sum()
+    print(f"\nFirst player win rate: {first_player_wins / total_games:.2%}")
+    print(f"First player wins (excluding draws): {first_player_wins} out of {total_games - draws} games")
 
     # Average number of moves per game
     avg_moves = df['num_moves'].mean()
@@ -45,7 +49,7 @@ def analyze_tictactoe_data(csv_path):
     for pos, count in common_first_moves.items():
         print(f"  Position {pos}: {count} times ({count / total_games:.2%})")
 
-    # Example: move sequences length stats
+    # Move sequence length stats
     move_seq_lengths = df['move_sequence'].apply(lambda s: len(s.split('-')))
     print(f"\nMove sequence length: min {move_seq_lengths.min()}, max {move_seq_lengths.max()}, avg {move_seq_lengths.mean():.2f}")
 
