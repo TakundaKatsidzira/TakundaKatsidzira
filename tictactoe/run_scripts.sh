@@ -1,1 +1,1 @@
-python scripts/play_tictactoe.py
+python -m scripts.play_tictactoe

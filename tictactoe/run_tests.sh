@@ -1,1 +1,1 @@
-python -m unittest tests/test_tictactoe.py
+python -m unittest tests.test_tictactoe

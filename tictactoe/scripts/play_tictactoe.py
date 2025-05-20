@@ -59,7 +59,7 @@ def main():
     agent_x = RandomAgent('X')
     agent_o = MinimaxAgent('O')
 
-    NUM_GAMES = 10
+    NUM_GAMES = 10000
     for i in range(NUM_GAMES):
         print(f"Game {i+1}/{NUM_GAMES}")
         game = play_game(agent_x, agent_o, verbose=False)
@@ -68,7 +68,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-# Add your game simulation or runner script here
-# import src.tictactoe as ttt
-# def main(): ...
-# if __name__ == "__main__": main()
