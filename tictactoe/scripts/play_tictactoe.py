@@ -68,8 +68,8 @@ def main():
         # agent_o = MinimaxAgent('O')
 
         # Both MiniMax
-         agent_x = MinimaxAgent('X')
-         agent_o = MinimaxAgent('O')
+        agent_x = MinimaxAgent('X')
+        agent_o = MinimaxAgent('O')
 
         print(f"Game {i+1}/{NUM_GAMES} - First player: {first_player}")
 
