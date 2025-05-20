@@ -48,4 +48,8 @@
 
 ---
 
-*Made with ❤️ by Takunda Katsidzira*  
+## 🎯 Strengths  
+- Strong foundation in Computer Science fundamentals 
+- Demonstrated performance optimization through **measurable metrics**  
+- Skilled at exploring multiple algorithmic approaches and evaluating trade-offs according to data structures and algorithms priciples
+- Experience debbugging and writing tests for my code and optimizing it for readability.  
