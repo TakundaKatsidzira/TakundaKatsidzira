@@ -1,0 +1,79 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.65in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue
+}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE \textbf{Shawn Takunda Katsidzira}}\\
+  \small \textbf{Phone:} +1 (240) 963-9999 \quad \textbf{Email:} katsidzirast@gmail.com \\
+  \href{https://linkedin.com/in/takunda-katsidzira-b78581364}{LinkedIn} \quad \href{https://github.com/TakundaKatsidzira}{GitHub}
+\end{center}
+
+\section*{Education}
+\textbf{Tuskegee University} — \textit{Bachelor of Science in Computer Science} \\
+\textit{2024 – 2028} | Tuskegee, AL \\
+Cumulative GPA: \textbf{3.8} \\
+Relevant Coursework: \textit{Programming I/II, Data Structures and Algorithms, Calculus I/II, Discrete Mathematics, Linear Algebra, Probability and Statistics}
+
+\section*{Work Experience}
+\textbf{AI/ML Research Student} \\
+\textit{Tuskegee University, Tuskegee, AL} \hfill \textit{Aug 2024 – Dec 2024}
+\begin{itemize}[leftmargin=1em]
+  \item Contributed to a research group evaluating machine learning and deep learning models for \textbf{groundwater forecasting} using Haywood County, NC data
+  \item Demonstrated that \textbf{LSTM models outperformed} traditional models \textit{(MSE: 0.01510 vs Random Forest 0.222)}
+  \item Generated visual reports to track \textbf{data trends and model performance}
+\end{itemize}
+
+\section*{Projects}
+
+\textbf{\href{https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/explorer}{Explorer}} — Terminal File Manager with Smart Navigation
+\begin{itemize}[leftmargin=1em]
+  \item Built a file explorer supporting \textbf{CRUD operations}, role-based permissions, undo/redo, and Trie-based autocomplete with edit distance
+  \item Optimized search from \textbf{O(n)} (~250ms) to \textbf{O(k)} (<10ms), achieving a \textbf{95\% speedup}
+  \item Reduced navigation and command errors by \textbf{80\%} through intelligent suggestions
+\end{itemize}
+
+\textbf{\href{https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/tictactoe}{TicTacToe}} — AI Simulation and Strategy Analytics
+\begin{itemize}[leftmargin=1em]
+  \item Developed AI agents using \textbf{random and minimax strategies} with \textbf{memoized dynamic programming}
+  \item Reduced runtime by \textbf{70\%} compared to naive minimax \textit{(O(b\textasciicircum d))} recursion
+  \item Minimax agents achieved a \textbf{35\% higher win rate} than random players
+\end{itemize}
+
+\textbf{\href{https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/dasher}{Dasher}} — Delivery Routing and Task Optimization
+\begin{itemize}[leftmargin=1em]
+  \item Modeled a city as a \textbf{weighted graph} and implemented \textbf{Dijkstra’s algorithm and backtracking}
+  \item Improved agent payouts by \textbf{22\%} via dynamic programming over greedy heuristics
+  \item Reduced delivery delays by \textbf{18\%} using \textbf{priority heaps} for task scheduling
+\end{itemize}
+
+\section*{Skills \& Concepts}
+\begin{itemize}[leftmargin=1em]
+  \item \textbf{Programming Languages:} C, C++, Python, SQL, R
+  \item \textbf{Core Competencies:} Object-Oriented Programming (OOP), Data Structures \& Algorithms (DSA), Debugging, Testing, Refactoring
+  \item \textbf{Tools \& Libraries:} Git, Bash, Linux, Jupyter, Pandas, NumPy
+  \item \textbf{Soft Skills:} Analytical Reporting, Research Presentation, Cross-disciplinary Collaboration
+\end{itemize}
+
+\section*{Strengths}
+\begin{itemize}[leftmargin=1em]
+  \item Strong foundation in \textbf{Computer Science fundamentals}
+  \item Demonstrated performance optimization through \textbf{measurable metrics}
+  \item Skilled in evaluating \textbf{algorithmic trade-offs} based on data structure principles
+  \item Experienced in \textbf{debugging, testing, and optimizing for readability}
+\end{itemize}
+
+\end{document}
