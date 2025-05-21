@@ -2,7 +2,6 @@
 # 👋 Hey there, 
 
 Welcome to my GitHub profile! I'm a student passionate about data driven insights
-
 ## 🚀 About Me
 ## GOALS
   Learn Python;

@@ -1,8 +1,10 @@
 import csv  # Imports the csv module for reading/writing CSV files.
 # Study: Python standard library, file I/O, CSV file format.
 
-import os   # Imports the os module for interacting with the operating system (paths, directories).
+import os    # Imports the os module for interacting with the operating system (paths, directories).
 # Study: File paths, directory management, os.path functions.
+
+import sys  # Imports the sys module for system-specific parameters and functions.
 
 import random  # Imports the random module for random number generation.
 # Study: Randomness in Python, random.choice, random.shuffle.
@@ -95,7 +97,7 @@ def play_game(agent_x, agent_o, starting_player, verbose=True) -> TicTacToe:
 
 def main():
     init_log_file()  # Set up the log file and header.
-    NUM_GAMES = 1000
+    NUM_GAMES = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
     # Number of games to simulate.
     
     print("Simulating games...")
