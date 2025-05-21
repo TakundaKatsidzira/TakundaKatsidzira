@@ -59,7 +59,8 @@ def test_ai_with_no_valid_moves():
         for c in range(board.cols):
             if (r, c) not in board.corners:
                 board.grid[r][c] = "O"
-    # Fills every non-corner cell with "O" so the AI cannot play.
+    # Remove all wild cards from the AI's hand
+    ai.hand.cards = [card for card in ai.hand.cards if card not in ("JO", "JT")]
     result = ai.choose_move(board, card_to_positions)
     assert result is None or (result[0] is None and result[1] is None)
     # Checks that the AI returns None or (None, None) when there are no valid moves.
