@@ -10,7 +10,7 @@ PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 export PYTHONPATH="$PROJECT_ROOT/src:$PYTHONPATH"
 
 # Run the Sequence game as a module
-python3 -m src.sequence
+python -m src.sequence
 
 # Deactivate venv after running (optional)
 if [ -n "$VIRTUAL_ENV" ]; then

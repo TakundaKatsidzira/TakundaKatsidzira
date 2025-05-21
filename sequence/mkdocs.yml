@@ -1,5 +1,0 @@
-site_name: Sequence Game Documentation
-nav:
-  - Home: index.md
-  - Gameplay Rules: gameplay_rules.md
-theme: readthedocs
