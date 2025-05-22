@@ -35,6 +35,15 @@ FEATURES & ENHANCEMENTS
 ---------------------------
 
 ---
+Parallelized Move Evaluation: When AI evaluates multiple options use multithreading or multiprocessing for speedup.
+# (DSA: Parallelism, Concurrency) Uses multiple cores for faster AI decision-making.
+# (DSA: Parallelism, Concurrency) This can be applied in:
+# - Minimax move evaluation: Each possible move at the root of the search tree can be evaluated in parallel, distributing the computation across threads or processes.
+# - Heuristic evaluation: When scoring multiple board states (e.g., for Monte Carlo simulations or batch heuristic scoring), parallelism can be used to evaluate many states at once.
+# - Simulation-based AI (e.g., Monte Carlo Tree Search): Each simulation or rollout can be run in parallel to speed up statistical evaluation.
+# - Game log analysis: When analyzing large numbers of logged games or moves for statistics or training data, parallel processing can accelerate aggregation and pattern detection.
+# - Sequence detection: If checking for sequences in multiple directions or for multiple players, these checks can be parallelized for large boards or batch analysis.
+# (OOP: Encapsulation, Modularity) Parallel logic should be encapsulated in utility functions or within the AI class, keeping threading/multiprocessing details hidden from the main game logic.
 
 ## ✅ ACCURATE GAME MECHANICS
 
@@ -132,14 +141,5 @@ Bitmasking: Represent board token presence with bitmaps for faster comparisons a
 Lazy Evaluation: Delay costly evaluations (like full sequence detection) until the board state requires it—e.g., after a 4-in-a-row is placed.
 # (DSA: Lazy Evaluation) Improves performance by avoiding unnecessary computation.
 
-Parallelized Move Evaluation: When AI evaluates multiple options use multithreading or multiprocessing for speedup.
-# (DSA: Parallelism, Concurrency) Uses multiple cores for faster AI decision-making.
-# (DSA: Parallelism, Concurrency) This can be applied in:
-# - Minimax move evaluation: Each possible move at the root of the search tree can be evaluated in parallel, distributing the computation across threads or processes.
-# - Heuristic evaluation: When scoring multiple board states (e.g., for Monte Carlo simulations or batch heuristic scoring), parallelism can be used to evaluate many states at once.
-# - Simulation-based AI (e.g., Monte Carlo Tree Search): Each simulation or rollout can be run in parallel to speed up statistical evaluation.
-# - Game log analysis: When analyzing large numbers of logged games or moves for statistics or training data, parallel processing can accelerate aggregation and pattern detection.
-# - Sequence detection: If checking for sequences in multiple directions or for multiple players, these checks can be parallelized for large boards or batch analysis.
-# (OOP: Encapsulation, Modularity) Parallel logic should be encapsulated in utility functions or within the AI class, keeping threading/multiprocessing details hidden from the main game logic.
 
 
