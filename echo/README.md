@@ -1,2 +1,0 @@
-Echo Music Player
-Terminal-based music player that allows users to: Add and manage music from the device Search artists/songs Queue, play, pause, resume, stop tracks Reverse or reorder queue sections View top/least played or searched songs Manage playlists and remove songs from the library Autocorrect for searches using edit distance + dynamic programming Trie stores artist and song names for fast prefix-based search and autocorrect Heaps maintain top/least played and searched track lists
