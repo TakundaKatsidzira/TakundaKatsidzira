@@ -1,0 +1,11 @@
+==== Crawly Analysis Report ====
+Total Files: 0
+Dead Links: 1
+Leaf Nodes: 0
+Cycles Detected: False
+
+Top Ranked Files by Frequency:
+
+Top Ranked Files by Size:
+
+Topological Sort (Dependencies Order):
