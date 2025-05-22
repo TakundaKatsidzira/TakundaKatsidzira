@@ -1,7 +1,7 @@
 🧭 EXPLORER: Terminal-Based Virtual File System
 # (OOP: Encapsulation, Abstraction) The explorer class encapsulates all file/folder logic and exposes only necessary operations, hiding internal state and implementation details from the user. This abstraction allows users to interact with a simple interface while the complexity is managed internally.
 
-EXPLORER is a terminal-based file explorer that simulates a virtual file system with robust functionality for file and folder management, access control, undo/redo, and analytics. It supports two user roles—Owner and User—each with distinct permissions, providing a secure and controlled environment for file operations.
+EXPLORER is a terminal-based file explorer that simulates a virtual file system with robust functionality for file and folder management, access control, recall of previous commands, and analytics. It supports two user roles—Owner and User—each with distinct permissions, providing a secure and controlled environment for file operations.
 # (OOP: Inheritance, Polymorphism) The Owner and User roles can be implemented as subclasses of a User base class. Inheritance allows shared logic (e.g., navigation) while polymorphism enables method overriding for permission checks and command access, so Owner and User behave differently for the same command.
 # (Data Structures: Trees, Hash Maps) The file system is best modeled as a tree, where each node is a file or folder. Hash maps (dictionaries) are used for fast lookup of files/folders by name or path, and to map users to their permissions.
 # (Algorithms: Traversal, Search) Tree traversal algorithms (DFS for recursive operations like tree display, BFS for breadth-wise listing) are used for commands like ls (list), tr (tree), and fd (find/search).
@@ -76,12 +76,6 @@ wr <filename>	Write to file
   -a	Append instead of overwrite
 # (OOP: Encapsulation) The file write method checks write permissions and updates content, supporting both overwrite and append modes.
 
-⏪ Version Control
-Command	Description
-un	Undo last state-altering command (cr, dl, mv, rn)
-# (Data Structures: Stack) A stack is used to store snapshots or command objects representing previous states, enabling undo functionality.
-# (Algorithms: Command Pattern) Each operation is encapsulated as a command object, which can be reversed by calling its undo method.
-
 📊 Analytics
 Command	Description
 tp	Top-N files
@@ -100,6 +94,14 @@ fd <name>	Search for file/folder
   -f	Search for file
   -d	Search for directory
 # (Algorithms: DFS/BFS, String Matching) The search traverses the tree (DFS or BFS) and uses string matching to find nodes with matching names.
+
+📜 Command Recall
+Command	Description
+rc	Recall a previous command from history
+  -n <number>	Recall the nth previous command (e.g., rc -3 recalls the third most recent command)
+# (OOP: Encapsulation) The command history is managed internally by the explorer class, not exposed directly to users. The recall logic is encapsulated in a method that safely accesses the command history.
+# (Data Structures: List/Array) The command history is stored as a list or array, allowing indexed access to previous commands.
+# (Algorithms: Indexing, Bounds Checking) The recall method uses negative indexing to fetch the nth previous command, with bounds checking to prevent errors.
 
 ❌ Exit
 Command	Description
