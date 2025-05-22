@@ -189,7 +189,50 @@ Determine most successful agents, most common winning strategies, and best openi
 # (Data Structures: Heap, Hash Map) Hash maps count occurrences, and heaps efficiently maintain the top-k elements for reporting.
 # (OOP: Single Responsibility Principle) Analysis is handled by a dedicated Analyzer class or script, keeping concerns separated from gameplay and logging.
 
-Performance Trade-Offs and Justifications
+---
 
-Bitmask Board vs 2D Array Board
-# (Data Structures: Bit Manipulation vs Array) Bitmasks enable fast win checks and hashing for memoization, while arrays are simple for move selection and debugging.
+Logging Agent Playing, Thinking, and Decision Time
+
+For each move, log the time taken by each agent to decide and play their move ("thinking time" or "decision time").
+# (OOP: Encapsulation) Each agent or the Game class manages its own timing logic, keeping timing state and logic internal to the object.
+# (DSA: Timestamps, Time Measurement) Use Python's time module (e.g., time.time() or time.perf_counter()) to record timestamps before and after move selection. Study: Python standard library, time measurement functions, performance profiling.
+# (OOP: Logging, Data Aggregation) The logger class/module is responsible for collecting, storing, and aggregating timing data for each agent and the overall game. Study: Separation of concerns, logging patterns, data aggregation.
+# (Analysis) Enables post-game analysis of agent efficiency, average move time, and performance comparison between strategies. Study: Data analysis, statistics, and visualization techniques.
+
+**Example log fields:**
+- agent_X_time: Total time (sec) X used for all moves
+  # (OOP: Attribute Aggregation) Each agent or the logger maintains a running total of time spent. Study: Attribute management, aggregation patterns.
+- agent_O_time: Total time (sec) O used for all moves
+  # (OOP: Attribute Aggregation) Same as above for the other agent.
+- move_times_X: List of time taken for each move by X (optional, for deeper analysis)
+  # (DSA: List/Array) Store per-move times in a list for further statistical analysis. Study: List operations, data collection.
+- move_times_O: List of time taken for each move by O
+  # (DSA: List/Array) Same as above for the other agent.
+- game_time: Total elapsed time for the game
+  # (DSA: Time Measurement) Calculate the difference between the start and end timestamps of the game. Study: Time arithmetic, performance measurement.
+
+**Analysis Script Should Extract:**
+- Average, min, max, and standard deviation of move times per agent/strategy
+  # (DSA: Statistics) Use statistical functions to summarize timing data. Study: Python's statistics module, descriptive statistics.
+- Comparison of thinking time between agent types (e.g., Minimax vs Random)
+  # (OOP: Polymorphism) Different agent subclasses can be compared based on their timing data. Study: Class inheritance, method overriding, comparative analysis.
+- Correlation between decision time and win rate or move quality
+  # (DSA: Correlation Analysis) Analyze relationships between timing and outcomes. Study: Correlation coefficients, data science basics.
+- Outlier detection (e.g., unusually long or short moves)
+  # (DSA: Outlier Detection) Identify and analyze outliers in timing data. Study: Box plots, z-scores, robust statistics.
+- Aggregate statistics for total and per-move decision time
+  # (DSA: Aggregation) Summarize timing data for reporting and visualization. Study: Data aggregation, reporting.
+
+**How to implement:**
+- Before calling an agent's move selection, record the start time.
+  # (DSA: Timestamping) Use time.time() or time.perf_counter() to get the current time. Study: Function calls, time measurement.
+- After the move is selected, record the end time and compute the difference.
+  # (DSA: Time Arithmetic) Subtract start from end to get elapsed time. Study: Arithmetic operations, variable assignment.
+- Accumulate this per agent and log it in the game log.
+  # (OOP: Attribute Update, Logging) Update the agent's or logger's attributes and write to the log. Study: Attribute mutation, logging best practices.
+- In analysis, compute summary statistics and visualize distributions of decision times.
+  # (DSA: Data Analysis, Visualization) Use libraries like pandas, matplotlib, or seaborn to analyze and visualize timing data. Study: Data science tools, visualization techniques.
+
+This enables detailed analysis of agent performance, efficiency, and strategic complexity.
+# (OOP: Modularity, Extensibility) The design allows for easy extension to new agent types or additional logging fields. Study: Modular code design, extensibility patterns.
+# (DSA: Data-Driven Insights) Rich logs support advanced analytics and data-driven improvements to agent strategies. Study: Data-driven development, feedback loops.
