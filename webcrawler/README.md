@@ -1,133 +1,222 @@
-# WebCrawler
-# (OOP: Naming, Abstraction) The project is organized as a class/module, abstracting crawling logic. Study: OOP basics, class/module design.
+✅ PROJECT OVERVIEW
+# (OOP: Documentation, Abstraction) Start with a clear overview to abstract the system's purpose and guide modular design. Study: Writing docstrings, module-level comments.
 
-## Overview
-**WebCrawler** is a recursive crawler tailored for Wikipedia pages. It explores internal links, maps the link structure, and analyzes metadata like page depth, dead links, and graph relationships. The crawler is powered by a suite of advanced algorithms and data structures, enabling efficient and scalable performance.
-# (OOP: Encapsulation) Crawling, parsing, and analysis logic are encapsulated in classes/modules. Study: Encapsulation, modularity.
-# (DSA: Recursion, Graphs, Trees) Uses recursion for crawling, graphs/trees for structure. Study: Recursive algorithms, graph/tree data structures.
+Project Name: Crawly
+# (OOP: Naming, Modularity) Use meaningful names for classes, modules, and files to support modularity and maintainability. Study: Naming conventions, modular project structure.
 
-Run with link to wikipedia pages as argument at command line. write to log file data off all checks
-# (OOP: Abstraction, Encapsulation) The crawler abstracts command-line interaction and encapsulates logging logic. Study: Command-line interfaces, encapsulation of I/O.
+Purpose: Recursively traverse a directed acyclic graph (DAG) of text files linked by URLs, analyze structure, detect cycles, find leaf and dead nodes, compute dependency depth, and rank files by traversal count and size.
+# (DSA: Graphs, Recursion, DAGs) Represent the file/link structure as an adjacency list (dict of lists). Use recursion for traversal and DAG properties for dependency analysis. Study: Graph data structures, recursion, DAG algorithms.
+# (OOP: Encapsulation) Encapsulate traversal, analysis, and ranking logic in separate classes/modules for clarity and reusability. Study: Class design, separation of concerns.
 
----
-Visited Pages List
-# (DSA: List, Metadata Aggregation) Stores all successfully crawled URLs in a list, each with associated metadata. Study: List data structure, metadata collection.
+Features:
+# (OOP: Feature Modularity) Implement each feature as a method or class for better organization, testing, and extensibility. Study: Single Responsibility Principle, modular design.
 
-All successfully crawled URLs.
-# (DSA: List) Simple storage of URLs. Study: List basics.
+DFS & BFS for traversal
+# (DSA: DFS, BFS) Implement both depth-first and breadth-first search for flexible graph traversal. Use a stack for DFS and a queue for BFS. Study: Stack/queue usage, iterative vs recursive traversal.
+# (OOP: Strategy Pattern) Use the strategy pattern to allow switching between traversal methods at runtime. Study: Design patterns for interchangeable algorithms.
 
-Includes metadata like depth, size, time to fetch.
-# (DSA: Metadata, Tuple/Dict) Each URL entry includes extra info, often stored as a tuple or dictionary. Study: Tuple/dict usage for metadata.
+Cycle and dead link detection
+# (DSA: Cycle Detection, Error Handling) Use visited sets and recursion stacks for cycle detection; handle HTTP errors for dead links. Study: Cycle detection algorithms, exception handling.
+# (OOP: Encapsulation) Place detection logic in an Analyzer class to keep code modular and testable. Study: Encapsulation, modular error handling.
 
-Dead Links Report
-# (DSA: Error Handling, Hash Map) Tracks unreachable or broken links, often using a hash map for fast lookup. Study: Exception handling, dictionary for status.
+Leaf node identification
+# (DSA: Degree Calculation) Identify nodes with no outgoing edges by checking adjacency lists. Study: Out-degree calculation, graph traversal.
+# (OOP: Utility Methods) Implement as a utility method in the analyzer class for reuse. Study: Utility/helper functions.
 
-Unreachable, broken, or redirecting-to-dead pages.
-# (DSA: Error Handling) Identifies and logs failed requests. Study: Error/exception handling.
+Dependency and depth analysis
+# (DSA: Topological Sort, BFS) Use topological sort for dependency order and BFS for depth calculation. Study: Kahn's algorithm, level-order traversal.
+# (OOP: Reusability) Reuse traversal logic for multiple analyses to avoid code duplication. Study: Code reuse, DRY principle.
 
-Include HTTP status codes and error messages.
-# (DSA: Metadata, Logging) Stores status codes and errors for analysis. Study: Logging patterns, HTTP status codes.
+File ranking
+# (DSA: Heap, Sorting) Use heaps for top-K ranking and sorting for full ranking. Study: heapq module, sorting algorithms.
+# (OOP: Aggregation) Aggregate ranking logic in a dedicated class or method for clarity. Study: Aggregation patterns.
 
-Redirect Map
-# (DSA: Hash Map) Maps original URLs to their redirected targets. Study: Dictionary mapping, redirect handling.
+Complexity analytics and statistics
+# (DSA: Time/Space Complexity) Track and log time/memory usage during traversal using profiling tools. Study: Profiling, complexity analysis.
+# (OOP: Logging, Monitoring) Encapsulate analytics in a logger or monitor class to keep concerns separated. Study: Logging best practices, monitoring patterns.
 
-Shows original URLs and their final redirected target (useful for Wikipedia disambiguation).
-# (DSA: Mapping) Useful for tracking disambiguation and canonical URLs. Study: Mapping relationships.
+Report generation
+# (OOP: Separation of Concerns) Separate report formatting and output from core logic by using a ReportGenerator class. Study: Report generator classes, template methods.
+# (DSA: File I/O, Serialization) Efficiently write structured data to files for analysis and sharing. Study: File operations, serialization formats.
 
-Unvisited Pages
-# (DSA: Set, Filtering) Tracks discovered but unvisited pages, often using a set for uniqueness. Study: Set operations, filtering logic.
+📁 PROJECT STRUCTURE
+# (OOP: Modularity, Separation of Concerns) Organize code into folders by responsibility (src, data, scripts, tests) for maintainability. Study: Project organization, modularity.
 
-Pages discovered via links but not visited due to depth limits or filtering.
-# (DSA: Filtering, Set) Filtering logic for crawl limits. Study: Filtering algorithms.
+crawly/
+│                    
+├── src/
+│   ├── __init__.py
+│   ├── crawly.py  # Main execution script
+│   ├── graph_builder.py        # Build the graph from root URL
+│   ├── analyzer.py             # Perform analysis (DFS, cycle detect, etc.)
+│   ├── utils.py                # Helper functions (e.g., fetch URL)
+│   └── report_generator.py     # Generate and format report
+│
+├── data/
+│   └── cache/ # Stores fetched and parsed files locally
+|   └── analysis_report.txt   # Output report               
+├── scripts/
+│   └── run.sh scpt to run program 
+|   └── test.sh scrpt to run tests on all modules using pytest -v
+|   └── clean.sh scrpt to delete all pycache              
+├── tests/
+│   └── test_crawly.py
+|   └── test_graph_builder.py
+|   └── test_utils.py
+└── README.txt                  # Project overview and usage
 
-Page Tree Hierarchy
-# (DSA: Tree) Represents crawl structure as a tree based on depth. Study: Tree data structures, parent-child relationships.
+🧾 INPUT REQUIREMENTS
+A text file URL (e.g., https://example.com/root.txt) as root input.
+# (OOP: Input Validation) Encapsulate input validation and parsing in a dedicated function or class. Study: Input validation, error handling.
 
-Based on crawl depth, shows a tree structure from the root page.
-# (DSA: Tree Traversal) Visualizes crawl as a tree. Study: Tree traversal, visualization.
+Each file contains plain text URLs, one per line.
+# (DSA: File Parsing) Use line-by-line file reading for efficient parsing. Study: File I/O, parsing techniques.
 
-Page Size Ranking
-# (DSA: Sorting, Ranking) Ranks pages by their byte size using sorting algorithms. Study: Sorting, ranking techniques.
+Files may reference other files (forming a DAG or cycles).
+# (DSA: Graph Construction) Build the adjacency list as you parse links. Study: Graph building, cycle detection.
 
-Already discussed — ranks pages by their byte size.
-# (DSA: Sorting) Applies sorting to metadata. Study: Sorting algorithms.
+--report report/analysis_report.txt
+--verbose           # Print traversal logs
+# (OOP: Command-Line Interface) Use argparse or click to encapsulate CLI logic. Study: CLI libraries, argument parsing.
 
-Link Popularity Ranking
-# (DSA: In-degree, Graph Analysis) Sorts pages by how many other pages link to them (in-degree). Study: Graph in-degree, popularity metrics.
+🔁 INPUT SEQUENCE & LOGIC FLOW
+Fetch Root URL
+-> Parse contents into a list of links
+# (OOP: Pipeline Design) Structure the process as a pipeline of encapsulated steps. Study: Pipeline patterns, modular workflow.
 
-Sort pages by in-degree (how many other pages link to them).
-# (DSA: Graph Metrics) Measures link popularity. Study: Graph theory.
+Build Graph (graph_builder.py)
+-> Recursively fetch and parse linked files
+-> Track visited URLs to avoid duplication
+-> Store structure as adjacency list
+# (DSA: Recursion, Hash Set) Use recursion and a set to avoid revisiting nodes. Study: Recursive traversal, set operations.
 
-Graph Cycles Detected
-# (DSA: Cycle Detection, Graph) Identifies loops in the link graph. Study: Cycle detection algorithms, graph traversal.
+Analyze (analyzer.py)
+# (OOP: Analyzer Class) Encapsulate all analysis logic in a dedicated class. Study: Analyzer pattern, modular analysis.
 
-Looping links (e.g., A links to B, B back to A).
-# (DSA: Cycle Example) Illustrates a simple cycle. Study: Cycle examples.
+DFS to detect:
+Cycles using visited set and recursion stack
+Leaf nodes (nodes with no children)
+Dead links (404s or invalid files)
+# (DSA: DFS, Cycle Detection, Error Handling) Use DFS for traversal, recursion stack for cycle detection, and error handling for dead links. Study: DFS, cycle detection, exception handling.
 
-Topological Sort of Pages
-# (DSA: Topological Sort) Orders pages if treating links as dependencies (DAG). Study: Topological sorting, DAGs.
+BFS for shortest path to leaf
+# (DSA: BFS, Shortest Path) Use BFS for shortest path calculations. Study: BFS, shortest path algorithms.
 
-If treating links as dependencies.
-# (DSA: DAG, Dependency Analysis) Applies to dependency graphs. Study: DAG properties, dependency resolution.
----
+Topological Sort for dependency order
+# (DSA: Topological Sort) Use Kahn's algorithm or DFS-based sort for dependency analysis. Study: Topological sorting.
 
-## Features
+Hashing and bitmasking for memoization and visit tracking
+# (DSA: Hashing, Bitmasking, Memoization) Use hash maps and bitmasks to efficiently track visited nodes and cache results. Study: Hashing, bitmasking, memoization.
 
-- 🌐 **Recursive Wikipedia Link Exploration**  
-  Start from any Wikipedia page and recursively follow internal links to construct a web graph.
-  # (DSA: Recursion, Graph Traversal) Recursively explores links using DFS/BFS. Study: Recursive functions, graph traversal.
+Top-K Heap for ranking files by size or visit frequency
+# (DSA: Heap, Top-K) Use a min-heap for efficient top-K queries. Study: heapq, top-K algorithms.
 
-- 🌳 **Tree Structure & Graph Generation**  
-  Build both hierarchical and flat graph representations of the crawl.
-  # (DSA: Trees, Graphs) Hierarchical (tree) and flat (graph) structures for representing links. Study: Tree vs graph, adjacency lists/matrices.
+Log Time/Space Complexity
+Count nodes, edges, recursion depth, memory usage, etc.
+# (DSA: Profiling, Complexity Analysis) Use profiling tools and counters to track resource usage. Study: Profiling, complexity metrics.
 
-- 📏 **Page Depth Metrics**  
-  Track how deeply nested each page is relative to the starting point.
-  # (DSA: BFS/DFS, Depth Tracking) Uses traversal depth to annotate nodes. Study: BFS/DFS with depth, level-order traversal.
+Generate Report
+Write:
+Graph structure summary
+Node rankings
+Leaf, dead links
+Dependency stats
+Performance metrics
+# (OOP: ReportGenerator Class) Encapsulate all report logic in a dedicated class for maintainability. Study: Report generation, formatting.
 
-- 🚫 **Dead Link Detection**  
-  Identify and report unreachable or broken URLs.
-  # (DSA: Error Handling, Hash Map) Track failed requests and mark as dead links. Study: Exception handling, hash maps for status.
+🧾 OUTPUT
+Printed summary to console (optional)
+# (OOP: Output Abstraction) Abstract output logic to support both console and file output. Study: Output abstraction, interface design.
 
-- 📊 **Graph Visualization Output**  
-  Export `.dot` or `.json` files to visualize hyperlink relationships.
-  # (DSA: Serialization, Graph Export) Serializes graph data for visualization. Study: JSON, DOT format, serialization.
+Generated text file:
+report/analysis_report.txt
+Contains:
+Total files visited
+Dead links
+Leaf nodes
+Cycles detected
+Top 10 largest and most traversed files
+Dependency tree depth
+Shortest path analysis
+Complexity stats (DFS, BFS, memory, etc.)
+# (OOP: Structured Output, DSA: Aggregation) Aggregate and format results for reporting. Study: Data aggregation, output formatting.
 
-- 📁 **Configurable Depth & Strategy**  
-  Choose between BFS or DFS with customizable crawl depth.
-  # (OOP: Strategy Pattern) Allows switching between BFS/DFS. Study: Strategy pattern, function pointers, configuration.
+📄 README.txt
+====================================
+Crawly - Recursive URL Graph Crawler
+====================================
 
----
+DESCRIPTION:
+-------------
+Given a root text file URL, Crawly recursively fetches all linked files to build and analyze a directed hyperlink graph. It detects cycles, leaf nodes, dead links, dependency depths, ranks files by size and visit frequency, and generates a comprehensive report.
+# (OOP: High-Level Abstraction) Summarize the system's high-level responsibilities. Study: Abstraction, system design.
 
-## Enhanced Algorithmic Toolkit
+FEATURES:
+----------
+- Detect cycles using DFS
+- Find leaf nodes (files with no further links)
+- Identify dead/unreachable links
+- Rank files by:
+  * Size
+  * How frequently they're traversed
+- Calculate dependency depth
+- Compute shortest path from root to leaf using BFS
+- Generate analytics:
+  * Time and space complexity of traversal
+  * Structure stats
+  * Dependency analysis
+# (OOP: Feature Encapsulation) Each feature should be encapsulated in its own method or class for clarity and reuse. Study: Encapsulation, modularity.
 
-### Core Algorithms
-- **DFS & BFS**: Primary traversal strategies for link exploration.
-  # (DSA: DFS, BFS) Fundamental graph traversal algorithms. Study: Stack/queue-based traversal, recursion vs iteration.
-- **Backtracking**: Handles loops, redirects, and dead ends.
-  # (DSA: Backtracking) Retraces steps on failure/loops. Study: Recursive backtracking, visited sets.
-- **Dynamic Programming**: Cache results and memoize page data.
-  # (DSA: Memoization, DP) Avoids redundant work by caching results of previous computations. Study: Memoization techniques, dynamic programming patterns, cache invalidation.
+DATA STRUCTURES USED:
+----------------------
+- Graphs (Adjacency List)
+- Stacks, Queues
+- Hash Maps
+- Bitmasks (for visited tracking)
+- Min/Max Heaps
+- Dynamic Programming (memoization)
+- Topological Sort
+# (DSA: Data Structure Selection) Choose the most efficient data structure for each task to optimize performance and code clarity. Study: Data structure trade-offs, algorithm selection.
 
-- **Greedy Algorithms**: Optimize link prioritization under constraints.
-  # (DSA: Greedy) Chooses the best local option at each step for efficiency, often used for prioritizing which links to crawl next. Study: Greedy algorithm design, optimal substructure, examples like Dijkstra's algorithm.
+   --report <path> Specify custom output file
+   --verbose       Enable detailed logs
+# (OOP: Configurability) Use configuration options to make the tool flexible and user-friendly. Study: Configurable software design.
 
-- **Topological Sort**: Analyze dependency order of linked articles.
-  # (DSA: Topological Sort) Orders nodes in a directed acyclic graph (DAG) to respect dependencies, useful for understanding prerequisite relationships between pages. Study: Kahn's algorithm, DFS-based topological sort, DAG properties.
+OUTPUT:
+--------
+Generates:
+# (OOP: Encapsulation, Separation of Concerns) Output generation is encapsulated in a report module/class, keeping reporting logic separate from crawling/analysis. Study: Encapsulation, modular design.
 
-### Fundamental Techniques
-- **Algorithm Analysis**: Time and space complexity optimization.
-  # (DSA: Complexity Analysis) Evaluates the efficiency of algorithms in terms of time and space. Study: Big O notation, asymptotic analysis, profiling tools.
+- A text-based report in /report/analysis_report.txt
+  # (DSA: File I/O, Serialization) Writes structured data to a file for later review. Study: File operations, serialization formats.
 
-- **Searching, Sorting & Recursion**: Efficiently manage and process URL lists.
-  # (DSA: Search, Sort, Recursion) Core techniques for handling and organizing data, such as finding links, ordering them, and using recursion for traversal. Study: Binary search, quicksort, merge sort, recursion basics.
+- Logs and runtime metrics
+  # (DSA: Logging, Time/Space Complexity) Captures logs and performance metrics during execution. Study: Logging patterns, performance profiling.
 
-- **Modified Binary Search**: For sorted link metadata or fast lookup.
-  # (DSA: Binary Search) Enables fast lookup in sorted data structures, such as quickly finding a link or metadata entry. Study: Binary search variants, lower/upper bound search.
+- Summary of:
+   * Total nodes
+     # (DSA: Graph Traversal, Counting) Counts all nodes in the graph. Study: Graph traversal (BFS/DFS), counting algorithms.
+   * Dead links
+     # (DSA: Error Handling, Hash Map) Tracks unreachable nodes using error handling and hash maps for fast lookup. Study: Exception handling, dictionary usage.
+   * Leaf files
+     # (DSA: Graph Analysis, Degree Calculation) Identifies nodes with no outgoing edges (leaves). Study: Out-degree calculation, graph theory.
+   * Cycles
+     # (DSA: Cycle Detection, DFS) Detects cycles using DFS and recursion stack. Study: Cycle detection algorithms, DFS.
+   * Most linked files
+     # (DSA: In-degree, Sorting) Ranks nodes by in-degree (number of incoming links). Study: In-degree calculation, sorting.
+   * File size ranks
+     # (DSA: Sorting, Ranking) Sorts files by size for ranking. Study: Sorting algorithms, ranking techniques.
+   * Graph depth
+     # (DSA: BFS/DFS, Depth Calculation) Calculates the maximum depth of the graph using BFS or DFS. Study: Level-order traversal, recursion depth.
 
-- **Prefix Sum & Hashing**: Track depth, visit frequency, and reachability.
-  # (DSA: Prefix Sum, Hash Map) Prefix sums allow efficient range queries (e.g., number of visits in a range), while hash maps provide fast lookup for visited URLs and metadata. Study: Prefix sum arrays, hash functions, dictionary usage.
+DEPENDENCIES:
+--------------
+- requests
+  # (DSA: HTTP Requests) Used for fetching files over the web. Study: HTTP protocol, requests library.
+- tqdm
+  # (DSA: Progress Bar, Iteration) Provides progress bars for loops. Study: tqdm usage, iteration patterns.
+- heapq
+  # (DSA: Heap/Priority Queue) Used for efficient top-K ranking and priority queues. Study: Heap data structure, heapq module.
 
-- **Two Pointers & Sliding Window**: Track sequences of similar/related pages.
-  # (DSA: Two Pointers, Sliding Window) Efficiently process and analyze sequences or subarrays, such as finding the longest chain of related pages. Study: Windowed algorithms, pointer manipulation, sequence analysis.
-
+- collections
+  # (DSA: Data Structures) Provides specialized containers like deque, Counter, defaultdict for efficient data handling. Study: collections module, advanced data structures.

@@ -103,60 +103,6 @@ Learning Programming with a interest in real world problem solving and AI
 * **Graphs**: Represent player adjacency or strategic clustering.
 * **Stacks**: Allow undoing of token placements.
 
-
-## Dasher
-
-* Simulate a delivery game where an agent navigates a city represented as a graph to complete delivery tasks.
-* Player: Accepts, cancels (before pickup), picks up, and delivers orders while managing a limited budget (distance/time).
-* City Map: Modeled as a weighted graph (nodes = locations, edges = roads with distance/time).
-* Orders: Randomly generated with pickup/drop-off points, payouts, and time windows.
-* Agent Strategies:
-  * Greedy: Accept highest-paying nearby order.
-  * Shortest Path: Choose orders along the most efficient route.
-* Backtracking explores different sequences of order fulfillment for maximum efficiency.
-* Dynamic programming helps solve route optimization and delivery selection problems.
-* Heaps are used to manage order priority (highest payout, nearest expiration) and for shortest-path algorithms like Dijkstra’s.
-* Trees and decision trees can model planning decisions across delivery sequences.
-
-**Techniques:**
-* **Graphs**: Model the city map with weighted edges.
-* **Greedy Algorithms**: Select highest payout or earliest deadline delivery.
-* **Backtracking**: Explore order fulfillment sequences for optimal routing.
-* **Dynamic Programming**: Solve variations of the Traveling Salesman Problem.
-* **Dijkstra's Algorithm (Modified Binary Search + Heap)**: Efficient route calculation.
-* **Top K Elements**: Find top k most profitable or efficient deliveries.
-
-**Data Structures:**
-* **Heaps**: Prioritize orders (by payout, expiration, proximity).
-* **Graphs (Adjacency List)**: Represent map with time/distance weights.
-* **Trees**: Model decision-making for multi-step deliveries.
-* **Queues**: For BFS traversal of the map or task management.
-
-
-## WebCrawler
-
-* Crawl a Wikipedia page and recursively explore links, generating a report that includes:
-  * All discovered links
-  * Tree structure of the site
-  * Depth of each page
-  * Dead or unreachable links
-* Graphs represent the hyperlink structure of the site.
-* Backtracking handles recursive exploration with rollback on dead ends.
-* Dynamic programming caches visited URLs to avoid redundant work.
-
-**Techniques:**
-* **DFS & BFS**: Traverse page links recursively or level-wise.
-* **Backtracking**: Roll back from dead or looped links.
-* **Dynamic Programming**: Cache visited URLs to prevent re-crawling.
-* **Topological Sort**: Analyze dependency/order of linked pages.
-* **Prefix Sum / Hashing**: Track depth and reachability metrics.
-
-**Data Structures:**
-* **Graphs**: Represent the hyperlink structure.
-* **Trees**: Store crawl structure with depth.
-* **Hash Maps**: Store visited URLs with metadata.
-* **Stacks/Queues**: For DFS/BFS implementations.
-
 ## Explorer
 
 * A file explorer for creating, reading, updating, and deleting files/folders starting from a root directory. Includes user/owner permissions and role-based access.
@@ -177,3 +123,38 @@ Learning Programming with a interest in real world problem solving and AI
 * **Stacks**: Command/operation history.
 * **Hash Maps**: Track permissions, file metadata.
 * **Heaps**: Find top-N largest or most modified files.
+
+
+## Crawly
+
+## Given as a root a single text file URL, this file contains links to other files that contain links to other files and so on, Each of those links might also contain more links or be empty files forming a directed acrylic graph. 
+
+  ## **The gaol is to recursively traverse all links**
+## **detect cycles**
+## **Find dead links (unreachable)**
+##**Identify leaf nodes (files with no further links)**
+##**Rank files by size and by how often they were traversed**
+##**identify dependacies and dependancy depth**
+##**Find shortest path from root to leaf nodes**
+##**Use data structures and algorithms such as DFS,BFS, Topological Sort, Cyclic sort,hashing, Stacks and Queues, heaps, two heaps, Top K elements, backtracking , dynamic programming, bit manipulation with bitmasks,**
+## **Log analytics as well as statistics time and space complexity of data structures and algorithms used**
+## **Produce a report with details  of the analysis and computational complexity**
+
+
+**Techniques:**
+* **DFS & BFS**: Traverse page links recursively or level-wise.
+* **Backtracking**: Roll back from dead or looped links.
+* **Dynamic Programming**: Cache visited URLs to prevent re-crawling.
+* **Topological Sort**: Analyze dependency/order of linked pages.
+* **Hashing**: Track depth and reachability metrics.
+* **Bitmasks can effeciently encode sets of visited nodes**
+* **Top K elements to rank files by how often they are traversed and size**
+* **Two pointers can be an alternative way to detect cycles**
+
+
+**Data Structures:**
+* **Graphs**: Represent the hyperlink structure.
+* **Trees**: Store crawl structure with depth.
+* **Hash Maps**: Store visited URLs with metadata.
+* **Stacks/Queues**: For DFS/BFS implementations.
+
