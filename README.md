@@ -4,6 +4,9 @@
 Welcome to my GitHub profile! I'm a student passionate about data driven insights
 
 ## 🚀 About Me
+
+Learning Programming with a interest in real world problem solving and AI
+
 ## GOALS
 *  Learn Python;
 *  Learn OOP and Data Structures and Algorithms;
@@ -154,28 +157,6 @@ Welcome to my GitHub profile! I'm a student passionate about data driven insight
 * **Hash Maps**: Store visited URLs with metadata.
 * **Stacks/Queues**: For DFS/BFS implementations.
 
-
-## WebScraper (TMDB)
-
-* Scrape The Movie Database (TMDB) to find the top N trending movies and sort/filter them based on ratings, genres, popularity, and other metadata.
-* Heaps are used to maintain top-N rated/trending movies efficiently.
-* Tries (optional) can enable fast autocomplete or search indexing for actor/movie names.
-* Use trees to parse and represent category or genre hierarchies.
-
-**Techniques:**
-* **Heap**: Keep track of top-N trending/rated movies.
-* **Sorting (Merge/Quick)**: Sort by genre, rating, popularity.
-* **Trie**: Enable autocomplete for movie/actor names.
-* **Two Pointers**: Merge filtered lists (e.g., rating + genre).
-* **Bitwise XOR**: (Optional) Detect unique movie IDs or corrupted data.
-
-**Data Structures:**
-* **Heaps**: Track top-rated or most popular movies.
-* **Tries**: Autocomplete/search features.
-* **Arrays/Hash Maps**: Store and filter metadata.
-* **Trees**: Organize genre/category hierarchies.
-
-
 ## Explorer
 
 * A file explorer for creating, reading, updating, and deleting files/folders starting from a root directory. Includes user/owner permissions and role-based access.
@@ -189,7 +170,6 @@ Welcome to my GitHub profile! I'm a student passionate about data driven insight
 **Techniques:**
 * **Prefix Tree (Trie)**: Fast path/command suggestions.
 * **Stack**: Command history and undo.
-* **Topological Sort**: Handle symbolic links and cycles in file systems (like DAG).
 
 **Data Structures:**
 * **Trees**: Represent folder hierarchy.
@@ -197,47 +177,3 @@ Welcome to my GitHub profile! I'm a student passionate about data driven insight
 * **Stacks**: Command/operation history.
 * **Hash Maps**: Track permissions, file metadata.
 * **Heaps**: Find top-N largest or most modified files.
-
-
-## Echo Music Player
-
-* Terminal-based music player that allows users to:
-  * Add and manage music from the device
-  * Search artists/songs
-  * Queue, play, pause, resume, stop tracks
-  * Reverse or reorder queue sections
-  * View top/least played or searched songs
-  * Manage playlists and remove songs from the library
-* Autocorrect for searches using edit distance + dynamic programming
-* Trie stores artist and song names for fast prefix-based search and autocorrect
-* Heaps maintain top/least played and searched track lists
-
-**Techniques:**
-* **Heap**: Sort and retrieve most/least played or searched songs.
-* **Dynamic Programming**: Autocorrect and fuzzy search with edit distance.
-* **Trie**: Fast prefix search for artists or songs.
-* **Stack**: Reverse or undo play queue actions.
-
-**Data Structures:**
-* **Heaps**: Prioritize songs based on usage stats.
-* **Tries**: Store searchable names for fast lookup.
-* **Hash Maps**: Track play count, search stats.
-* **Queues/Stacks**: Handle song play queue and history.
-
-
-## AutoMod
-
-* A bot that continuously monitors and redacts personally identifiable information (PII) such as emails, phone numbers, and SSNs from incoming content streams (e.g., from https://jsonplaceholder.typicode.com/).
-* Use tries to store and match common sensitive patterns (e.g., name parts, domains).
-* Model complex PII patterns using finite automata (state machines as trees or graphs).
-* Dynamic programming helps in pattern recognition and error-tolerant matching (e.g., misformatted PII).
-* Heaps can rank detected PII by severity or confidence score (optional).
-
-**Techniques:**
-* **Tries**: Match known PII patterns quickly (emails, SSNs, etc.)
-* **Dynamic Programming**: Error-tolerant matching (e.g., fuzzy PII detection).
-* **Bit Manipulation**: Quick detection/validation of certain data formats.
-
-**Data Structures:**
-* **Tries**: Store common PII prefixes/domains.
-* **Hash Maps**: Store known flagged entities.
