@@ -1,13 +1,14 @@
-# src/graph_builder.py
 import requests
 from urllib.parse import urljoin
 from .utils import is_valid_url, normalize_url
+from .page_node import PageNode
 
 class GraphBuilder:
-    def __init__(self):
-        self.graph = {}
+    def __init__(self, verbose=False):
+        self.graph = {}  # str → PageNode
         self.visited = set()
         self.dead_links = set()
+        self.verbose = verbose
 
     def build_graph(self, root_url):
         normalized_url = normalize_url(root_url)
@@ -16,40 +17,50 @@ class GraphBuilder:
 
     def _dfs(self, url, depth=0):
         indent = "  " * depth
-        print(f"{indent}↳ Visiting: {url}")
-    
+        if self.verbose:
+            print(f"{indent}↳ Visiting: {url}")
+
         if url in self.visited:
-            print(f"{indent}  ⤷ Already visited")
+            if self.verbose:
+                print(f"{indent}  ⤷ Already visited")
             return
+
         self.visited.add(url)
+        node = self.graph.setdefault(url, PageNode(url))
 
         try:
             response = requests.get(url, timeout=5)
+            node.status_code = response.status_code
+            node.size = len(response.content)
+
             if response.status_code != 200:
-                print(f"{indent}  ✖ Dead link (status {response.status_code})")
+                if self.verbose:
+                    print(f"{indent}  ✖ Dead link (status {response.status_code})")
                 self.dead_links.add(url)
                 return
-            lines = response.text.strip().splitlines()
-            child_urls = []
 
+            lines = response.text.strip().splitlines()
             for line in lines:
                 line = line.strip()
-                if not line or line.startswith("#"):  # ← add this condition
+                if not line or line.startswith("#"):
                     continue
+
                 child_url = urljoin(url, line)
                 if is_valid_url(child_url):
-                    child_url = normalize_url(child_url)
-                    child_urls.append(child_url)
-                    self._dfs(child_url, depth + 1)
+                    normalized_child = normalize_url(child_url)
+                    child_node = self.graph.setdefault(normalized_child, PageNode(normalized_child))
+                    node.add_child(child_node)
+                    self._dfs(normalized_child, depth + 1)
 
-            self.graph[url] = child_urls
-        except Exception as e:
-            print(f"{indent}  ⚠ Exception fetching {url}: {e}")
+        except requests.RequestException as e:
+            if self.verbose:
+                print(f"{indent}  ⚠ Error fetching {url}: {e}")
             self.dead_links.add(url)
 
     def print_graph_tree(self, root_url, depth=0, visited=None):
         if visited is None:
             visited = set()
+
         indent = "  " * depth
         print(f"{indent}- {root_url}")
         visited.add(root_url)

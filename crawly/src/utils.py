@@ -1,14 +1,12 @@
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 import hashlib
 
 def is_valid_url(url):
     try:
         result = urlparse(url)
-        return all([result.scheme in ["http", "https"], result.netloc])
-    except:
+        return result.scheme in ["http", "https"] and result.netloc != ""
+    except Exception:
         return False
-
-from urllib.parse import urlparse, urlunparse
 
 def normalize_url(url):
     url = url.strip().rstrip('/')
@@ -20,6 +18,5 @@ def normalize_url(url):
     return urlunparse(normalized)
 
 def hash_url(url):
-    from .utils import normalize_url
     normalized = normalize_url(url)
     return hashlib.md5(normalized.encode()).hexdigest()

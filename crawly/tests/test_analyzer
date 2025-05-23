@@ -1,0 +1,71 @@
+import unittest
+from src.analyzer import Analyzer
+from src.page_node import PageNode
+
+
+class TestAnalyzer(unittest.TestCase):
+
+    def setUp(self):
+        # Create a basic DAG
+        self.a = PageNode("https://a.com")
+        self.b = PageNode("https://b.com")
+        self.c = PageNode("https://c.com")
+        self.d = PageNode("https://d.com")
+
+        self.a.add_child(self.b)
+        self.a.add_child(self.c)
+        self.b.add_child(self.d)
+        self.c.add_child(self.d)
+
+        self.graph = {
+            self.a.url: self.a,
+            self.b.url: self.b,
+            self.c.url: self.c,
+            self.d.url: self.d
+        }
+
+    def test_analyze_basic_graph(self):
+        analyzer = Analyzer(self.graph, dead_links=set())
+        results = analyzer.analyze()
+
+        self.assertEqual(results["total_nodes"], 4)
+        self.assertFalse(results["has_cycles"])
+        self.assertIn("https://d.com", results["leaf_nodes"])
+        self.assertEqual(len(results["topo_sort"]), 4)
+
+    def test_detect_cycle(self):
+        # Introduce a cycle: d → a
+        self.d.add_child(self.a)
+
+        analyzer = Analyzer(self.graph, dead_links=set())
+        results = analyzer.analyze()
+
+        self.assertTrue(results["has_cycles"])
+        self.assertEqual(len(results["topo_sort"]), 4)  # May be incomplete if cycle detected
+
+    def test_top_frequent(self):
+        # Simulate multiple visits
+        self.b.visits = 5
+        self.c.visits = 3
+        self.d.visits = 7
+
+        analyzer = Analyzer(self.graph, dead_links=set())
+        top_frequent = analyzer._top_frequent(k=2)
+
+        self.assertEqual(top_frequent[0][0], "https://d.com")
+        self.assertEqual(top_frequent[1][0], "https://b.com")
+
+    def test_topological_sort_validity(self):
+        analyzer = Analyzer(self.graph, dead_links=set())
+        topo = analyzer._topological_sort()
+
+        # Topo sort must respect: a → [b,c], b/c → d
+        index = {url: i for i, url in enumerate(topo)}
+        self.assertLess(index["https://a.com"], index["https://b.com"])
+        self.assertLess(index["https://a.com"], index["https://c.com"])
+        self.assertLess(index["https://b.com"], index["https://d.com"])
+        self.assertLess(index["https://c.com"], index["https://d.com"])
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -3,43 +3,43 @@ import sys
 from .graph_builder import GraphBuilder
 from .analyzer import Analyzer
 from .report_generator import ReportGenerator
+from .utils import normalize_url
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Crawly - Hyperlinked Text Graph Analyzer")
-    parser.add_argument("root_url", nargs="?", help="Root URL to start crawling")
+    parser.add_argument("root_url", help="Root URL to start crawling from")
     parser.add_argument("--report", default="data/analysis_report.txt", help="Output report file")
     parser.add_argument("--verbose", action="store_true", help="Enable verbose output")
-    return parser
+    return parser.parse_args()
 
 def main():
-    parser = parse_args()
-    args = parser.parse_args()
-
-
-    if not args.root_url:
-        parser.print_help(sys.stdout)  # 👈 print to stdout
-        sys.exit(0)
+    args = parse_args()
+    root_url = normalize_url(args.root_url)
 
     if args.verbose:
-        print(f"[INFO] Starting crawl at: {args.root_url}")
+        print(f"[INFO] Starting crawl at: {root_url}")
 
-    builder = GraphBuilder()
-    graph, dead_links = builder.build_graph(args.root_url)
-
-    if args.verbose:
-        print(f"[INFO] Graph built with {len(graph)} nodes")
-
-    analyzer = Analyzer(graph, dead_links)
-    analysis_results = analyzer.analyze()
+    # Build graph
+    builder = GraphBuilder(verbose=args.verbose)
+    graph, dead_links = builder.build_graph(root_url)
 
     if args.verbose:
-        analyzer.print_bfs_layers(args.root_url)
+        print(f"[INFO] Graph built: {len(graph)} nodes, {len(dead_links)} dead links")
 
+    # Analyze graph
+    analyzer = Analyzer(graph, dead_links, verbose=args.verbose)
+    results = analyzer.analyze()
+
+    # Optional BFS hierarchy output
+    if args.verbose:
+        analyzer.print_bfs_layers(root_url)
+
+    # Generate report
     report = ReportGenerator()
-    report.generate(analysis_results, args.report)
+    report.generate(results, args.report)
 
     if args.verbose:
-        print(f"[INFO] Report saved to {args.report}")
+        print(f"[INFO] Report saved to: {args.report}")
 
 if __name__ == "__main__":
     main()
