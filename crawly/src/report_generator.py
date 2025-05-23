@@ -1,7 +1,7 @@
 # src/graph_builder.py
 import requests
 from urllib.parse import urljoin
-from utils import is_valid_url, normalize_url
+from .utils import is_valid_url, normalize_url
 
 class GraphBuilder:
     def __init__(self):
@@ -41,10 +41,6 @@ class GraphBuilder:
         except Exception:
             self.dead_links.add(url)
 
-
-
-                
-# src/report_generator.py
 
 class ReportGenerator:
     def generate(self, results, output_file):

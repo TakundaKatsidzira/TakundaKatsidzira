@@ -1,23 +1,22 @@
 ==== Crawly Analysis Report ====
-Total Files: 4
-Dead Links: 3
-Leaf Nodes: 0
+Total Files: 8
+Dead Links: 0
+Leaf Nodes: 1
 Cycles Detected: False
 
 Top Ranked Files by Frequency:
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/alpha.txt [2 visits]
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/beta.txt [2 visits]
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/delta.txt [2 visits]
-- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/root.txt [1 visits]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node9.txt [8 visits]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node8.txt [5 visits]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node7.txt [3 visits]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node6.txt [3 visits]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node5.txt [2 visits]
 
 Top Ranked Files by Size:
-- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/root.txt [107 bytes]
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/alpha.txt [14 bytes]
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/beta.txt [14 bytes]
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/delta.txt [14 bytes]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node0.txt [47 bytes]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node6.txt [42 bytes]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node3.txt [42 bytes]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node7.txt [39 bytes]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node5.txt [39 bytes]
 
 Topological Sort (Dependencies Order):
-- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/root.txt
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/alpha.txt
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/beta.txt
-- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/delta.txt
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node0.txt

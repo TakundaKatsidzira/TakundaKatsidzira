@@ -1,13 +1,10 @@
 #!/bin/bash
+set -e
 
-# Default root URL (you can change this to your preferred starting file)
-ROOT_URL="https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/root.txt"
+cd "$(dirname "$0")/.."
 
-
-# Default report output location
+ROOT_URL="https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node0.txt"
 REPORT_FILE="data/analysis_report.txt"
-
-# Verbosity flag
 VERBOSE=true
 
 echo "🚀 Starting Crawly..."
@@ -15,14 +12,10 @@ echo "🌐 Root URL: $ROOT_URL"
 echo "📝 Report will be saved to: $REPORT_FILE"
 echo ""
 
-# Activate virtual environment if exists (optional)
-# source venv/bin/activate
-
-# Run the Python script
 if $VERBOSE; then
-  python3 src/crawly.py "$ROOT_URL" --report "$REPORT_FILE" --verbose
+  python3 -m src.crawly "$ROOT_URL" --report "$REPORT_FILE" --verbose
 else
-  python3 src/crawly.py "$ROOT_URL" --report "$REPORT_FILE"
+  python3 -m src.crawly "$ROOT_URL" --report "$REPORT_FILE"
 fi
 
 echo ""
