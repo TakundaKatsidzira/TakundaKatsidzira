@@ -1,1 +1,5 @@
-https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/alpha.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/zeta.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/epsilon.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/delta.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/cycle.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/gamma.txt

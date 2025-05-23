@@ -60,21 +60,39 @@ class Analyzer:
     def _get_top_file_sizes(self, k=5):
         return heapq.nlargest(k, self.file_sizes.items(), key=lambda x: x[1])
 
-    def _topological_sort(self):
-        indegree = defaultdict(int)
-        for u in self.graph:
-            for v in self.graph[u]:
-                indegree[v] += 1
+    from collections import deque, defaultdict
 
-        queue = deque([u for u in self.graph if indegree[u] == 0])
+    from collections import deque, defaultdict
+
+    def _topological_sort(self):
+        in_degree = defaultdict(int)
+        referenced_nodes = set()
+
+        # First pass: count in-degrees and record all referenced nodes
+        for u in list(self.graph.keys()):
+            for v in self.graph.get(u, []):
+                in_degree[v] += 1
+                referenced_nodes.add(v)
+
+        # Add missing nodes after iteration
+        for v in referenced_nodes:
+            if v not in self.graph:
+                print(f"[WARN] {v} was referenced but not fetched (possibly a dead link?)")
+                self.graph[v] = []
+
+        # Queue nodes with zero in-degree
+        queue = deque([u for u in self.graph if in_degree[u] == 0])
         topo_order = []
 
         while queue:
             u = queue.popleft()
             topo_order.append(u)
-            for v in self.graph[u]:
-                indegree[v] -= 1
-                if indegree[v] == 0:
+
+            for v in self.graph.get(u, []):
+                in_degree[v] -= 1
+                if in_degree[v] == 0:
                     queue.append(v)
 
+        if len(topo_order) != len(self.graph):
+            print("[CYCLE DETECTED] Topological sort incomplete — graph has cycles.")
         return topo_order

@@ -1,11 +1,23 @@
 ==== Crawly Analysis Report ====
-Total Files: 0
-Dead Links: 1
+Total Files: 4
+Dead Links: 3
 Leaf Nodes: 0
 Cycles Detected: False
 
 Top Ranked Files by Frequency:
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/alpha.txt [2 visits]
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/beta.txt [2 visits]
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/delta.txt [2 visits]
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/root.txt [1 visits]
 
 Top Ranked Files by Size:
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/root.txt [107 bytes]
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/alpha.txt [14 bytes]
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/beta.txt [14 bytes]
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/delta.txt [14 bytes]
 
 Topological Sort (Dependencies Order):
+- https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/root.txt
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/alpha.txt
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/beta.txt
+- https://raw.githubusercontent.com/your-username/your-repo/main/example-dag/delta.txt
