@@ -1,0 +1,4 @@
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/alpha.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/zeta.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/epsilon.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/cycle.txt

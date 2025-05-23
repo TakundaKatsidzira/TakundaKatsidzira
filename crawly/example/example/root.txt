@@ -1,0 +1,4 @@
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/alpha.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/beta.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/gamma.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/deadlink.txt

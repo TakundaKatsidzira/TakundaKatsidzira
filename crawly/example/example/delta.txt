@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/large.txt
+https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/gamma.txt
