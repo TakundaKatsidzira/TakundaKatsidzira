@@ -2,3 +2,8 @@
 node9.txt
 node6.txt
 node5.txt
+node5.txt
+node8.txt
+node6.txt
+node4.txt
+node7.txt

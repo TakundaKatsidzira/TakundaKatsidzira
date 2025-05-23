@@ -1,3 +1,8 @@
 # node2.txt
 node3.txt
 node6.txt
+node8.txt
+node4.txt
+node6.txt
+node9.txt
+node5.txt
