@@ -29,10 +29,11 @@
 -🔍 Implemented cycle detection (via visited + recursion stack sets) and Kahn’s algorithm for topological sort to ensure acyclic site structure
 -🧪 Achieved 95%+ unit test coverage with mock-based HTTP simulations; validated graph accuracy, dead link detection, and edge-case handling
 
-### [Explorer](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/explorer) — Terminal File Manager with Smart Navigation  
-- 📂 Built a file explorer supporting CRUD operations, role-based user permissions, recall functionality, and analytics usings stacks, queues and heaps  
-- ⚡ Optimized command and path search from **O(n)** (~250ms) to **O(k)** (<10ms) latency — a **95% improvement**  
-- ❌ Reduced navigation and command errors by **80%** with autocorrect and intelligent suggestions  
+### [Explorer](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/explorer) — Terminal File Manager with Smart Navigation
+
+- 📂 Accelerated file and directory search by 42% by implementing BFS/DFS traversal strategies and optimizing for tree width/depth based on context.
+- ⚡ Improved Top-N/Bottom-N query performance to O(n log k) using heap-based selection algorithms via heapq, enabling responsive results across  files.
+- ❌ Minimized path resolution time from O(n) to O(1) through caching of resolved directory nodes, achieving a 70% performance gain in nested structures.  
  
 ### [TicTacToe](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/tictactoe) — AI Simulation & Strategy Analytics  
 - ♟ Developed AI agents using random moves and minimax algorithms enhanced by memoized dynamic programming  

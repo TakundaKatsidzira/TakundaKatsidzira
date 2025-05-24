@@ -3,8 +3,6 @@
 
 Project Name: Crawly
 📁 PROJECT STRUCTURE
-Got it! Here's your project tree with inline comments explaining the purpose of each file or folder:
-
 ```
 crawly/
 ├── src/                            # Core logic for crawling, analyzing, and reporting
@@ -114,11 +112,3 @@ Generates:
    * Graph depth
    * Page Tree Hierarchy
    * Topological Sort of Pages, treating links as dependencies.
-
-
-DEPENDENCIES:
---------------
-- requests
-- tqdm
-- heapq
-- collections

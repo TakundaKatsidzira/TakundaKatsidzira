@@ -1,32 +1,22 @@
 ==== Crawly Analysis Report ====
 
-Total Nodes: 9
+Total Nodes: 3
 Dead Links: 0
-Leaf Nodes: 1
+Leaf Nodes: 2
 Cycles Detected: No
 
 Top Frequent Files:
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node9.txt (9 visits)
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node8.txt (8 visits)
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node7.txt (6 visits)
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node6.txt (5 visits)
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node5.txt (4 visits)
+  - https://example.com/page1.txt (2 visits)
+  - https://example.com/page2.txt (2 visits)
+  - https://example.com/root.txt (1 visits)
 
 Top Files by Size:
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node3.txt (92.0 bytes)
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node4.txt (82.0 bytes)
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node2.txt (82.0 bytes)
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node0.txt (72.0 bytes)
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node5.txt (72.0 bytes)
+  - https://example.com/root.txt (0.0 bytes)
+  - https://example.com/page1.txt (0.0 bytes)
+  - https://example.com/page2.txt (0.0 bytes)
 
 Topological Sort (Dependency Order):
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node0.txt
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node2.txt
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node3.txt
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node4.txt
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node5.txt
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node6.txt
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node7.txt
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node8.txt
-  - https://raw.githubusercontent.com/TakundaKatsidzira/TakundaKatsidzira/main/crawly/example/node9.txt
+  - https://example.com/root.txt
+  - https://example.com/page1.txt
+  - https://example.com/page2.txt
 

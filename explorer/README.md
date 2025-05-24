@@ -1,125 +1,76 @@
-🧭 EXPLORER: Terminal-Based Virtual File System
-EXPLORER is a terminal-based file explorer that simulates a virtual file system with robust functionality for file and folder management, access control, recall of previous commands, and analytics. It supports two user roles—Owner and User—each with distinct permissions, providing a secure and controlled environment for file operations.
 
-📁 PROJECT STRUCTURE
-explorer/
-├── src/
-│   ├── __init__.py
-│   ├── commands.py       # Core command logic: cr, dl, mv, rn, rd, wr, ls, tr, lc, ex
-│   ├── access.py         # Permissions and session handling: cp, sw
-│   ├── filesystem.py     # Virtual file system model: in-memory VFS, file/folder nodes
-│   ├── features.py       # Analytics (tp, bt), search (fd), and command recall (rc)
-│   ├── utils.py          # Shared helpers: constants, logging, path utilities
-│   └── explorer.py       # Entry point and command loop
-│
-├── data/
-│   ├── state.json        # Unified serialized state: FS, permissions, session
-│   └── history.log       # Command recall log for rc command
-│
-├── scripts/
-│   ├── run.sh            # Launch EXPLORER
-│   ├── test.sh           # Run tests
-│   └── clean.sh          # Clear runtime data
-│
-├── tests/
-│   ├── __init__.py
-│   ├── test_filesystem.py  # VFS, file/folder nodes
-│   ├── test_access.py      # Permission and session logic
-│   ├── test_features.py    # Analytics, search, recall
-│   └── test_commands.py    # File/folder CRUD operations
-│
-├── README.txt            # Setup, usage, and feature documentation
-└── .gitignore            # Ignore compiled files, logs, virtual env, etc.
+EXPLORER is a terminal-based file explorer that simulates a virtual file system (VFS) with support for CRUD operations, searching, sorting and ranking. Designed for speed and extensibility, EXPLORER is driven entirely through the terminal
 
-To start the application, run EXPLORER with the path to an empty directory:
+🧠 Internal Architecture
 
-Enter a 4-digit Owner Key. Saved
+⚙️ MODULARITY
+📂 FILESYSTEM (filesystem.py)
+Core VFS Management
+Defines data models:
+FileNode for files
+DirectoryNode for directories
+Each node tracks: name, path, type, created_time and  size
+Maintains metadata (e.g., size, timestamps, paths)
+FileSystem as the root container and manager
+Tree (N-ary) For directory hierarchy
+Initialization & State
+Creates new or loads existing file system from state.json
+Maintains and updates persistent state
+State is auto-saved to `data/state.json`
+Implements all CRUD operations on files and directories
 
-Choose to continue as either:
-Owner Profile: Full permissions including setting user permissions.
-User Profile: Limited to existing permissions (default: rw for created files/folders).
+🧰 UTILS (utils.py)
+Output & Errors
+Pretty-printing for trees, paths, results
+Centralized error formatting and messaging
+Help Manual
+Structured dictionary-based help guide with usage examples
+Helpers & Algorithms
+Search (DFS/BFS)
+DFS/BFS For search and structure traversal
+Cache Reuse expensive traversal results, Caching frequently used traversal results
+Sorting & ranking logic for top/bottom-N queries
+Heap For top/bottom-N ranking
 
-📁 Core Features
-✅ File & Folder Operations (CRUD)
-All operations are run via terminal commands with flags:
-
-Command	Description
-sw	Switch between Owner and User profiles
-cr	Create a file or directory,  -f <filename>	Create file,  -d <dirname>	Create directory
-dl	Delete a file or directory,  -f <filename>	Delete file,  -d <dirname>	Delete directory
-rn <old> <new>	Rename a file or folder
-mv <name> <path>	Move a file or folder to a directory
-ls	List current directory contents,  -f	Only files,  -d	Only directories
-tr	Display tree structure from current path
-lc	Print current working path
-
-📄 File Content Access
-Command	Description
-rd <filename>	Read file,  -ul <n>	Read up to line n,  -ol <n>	Read only line n
-wr <filename>	Write to file, -a	Append instead of overwrite
-
-📊 Analytics
-Commands
-tp	Top-N files, bt	Bottom-N files
-  -n <number>	Number of files to return,  -r	Sort by recency,  -s	Sort by size,  -o	Return only the Nth file,  -a	Search recursively in subdirectories
-
-🔍 Search
-Command	Description, fd <name>	Search for file/folder,  -f	Search for file,  -d	Search for directory
-
-📜 Command Recall
-Command	Description, rc	Recall a previous command from history,  -n <number>	Recall the nth previous command (e.g., rc -3 recalls the third most recent command)
-
-❌ Exit
-Command	Description, ex	Exit program safely (keyboard interrupts are disabled)
-
-🔐 Permissions System
-Owner Permissions
-Full CRUD capabilities.
-
-Can set or modify file/folder permissions for users. User Permissions (default rw on creation). Can read/write to files and folders they have access to.
-
-Cannot change permissions.
-
-File Permissions:
-read, write
-
-Folder Permissions:
-read, write
-
-These permissions only apply to the User profile. The Owner has full access regardless of permissions.
-
-📁 Folder Permissions
-Permission	Allows User to...	Affects Commands
-read	View contents of the folder	ls, tr, fd, tp, bt, lc
-write	Modify contents of the folder	cr, dl, mv, rn, writing files inside the folder
-
-🚫 No read on folder:
-ls, tr, fd, tp, bt will not list contents but will list folder in parent directory. ls will not show tree beyond folder as root but will show up in tree of parent folder. files not searched by fd, tp, bt but can mv into folder. lc location and create files and folders you will have rw permissions on. You can delete files you know the names of and even rename them whether you made them or not.
+🧾 COMMANDS (commands.py)
+Command Validation
+Ensures command names, arguments, and paths are valid
+Argument Handling
+Path validation and resolution
+Parses flags and options (e.g., -a, -d)
+Transforms user input into actionable parameters
+Function Dispatch
+Maps user commands to appropriate FILESYSTEM or UTILS methods
+Catches Errors & Handles Output
+Acts as a middle layer between I/O (user) and core logic
+Commands for directories recursively work on all subdirectories on all files
+Commands that do not print will return text if successful or not successful
+Commands will work on files by default with -d flag for directories 
+cr, creates files or directories, cr notes.txt or create notes -d.  
+dl, deletes files or directories, dl notes.txt or delete notes -d. 
+lc, prints current working directory 
+cd, changes current working directory, change to parent directory by default, optional path argument, cd logs or cd 
+rd, prints all contents of a file by default, optional argument to read n lines,  rd logs/data.txt or rd data.txt 4
+wr, overwrites a files content by default, -a to append. wr logs/data.txt "text", wr logs/data.txt "new text" -a
+fd, searches for files or directories by name from current directory and prints path, fd data.txt or fd logs -d for directories 
+tp, prints list of paths of top-n,1 by default,  size by default -d for created date, tp or tp 3 or tp 4 -d
+bt, prints list of paths of bottom-n, 1 by default files, size by default, -d for created date, bt or bt 6 or bt 2 -d
+ls, prints list of files and directories in current working directory by default, optional path argument,  ls /logs
+tr, prints tree structure from current working directory by default, optional path argument, tr ../data 
+hp, prints help manual by default, optional argument to print for specific command, hp or hp tp, manual is dict of dicts
+ex, exits program and saves state to json by default, optional argument to not save, ex or ex !
 
 
-🚫 No write on folder:
-Can't create (cr) files/folders inside it. Can't delete (dl) anything in it. Can't move (mv) things into it or around in it. Can't rename (rn) anything within it. Can only ls, lc, tree, fd, tp, and bt.
-
-📄 File Permissions
-
-Permission	Allows User to...	Affects Commands
-
-read	View file contents	rd, tp, bt, fd,
-can read contents and files shows up in tp, bt, ls, tr, and fd
-
-write	Modify file contents	wr, mv, rn, dl (deletion of file)
-can rename, move, write to, and delete
-
-🚫 No read on file:
-Cannot read using rd. Cannot analyze with tp, bt.
-
-🚫 No write on file:
-Cannot write (wr) to file. Cannot rename (rn) or move (mv) the file. Cannot delete (dl) the file.
-
-By default, files/folders created by the User have rw permissions (for that user only)
-TO change permissions owner can use cp command with flags
-cp <path> 
-✔️ Flags
--r	Add read permission, -w	Add write permission, --r	Remove read permission, --w	Remove write permission
-Only the Owner can use this command. It will return:
-0 if permissions updated successfully, 1 if the command fails (invalid path, not owner, etc.)
+💻 EXPLORER (explorer.py)
+Main Interface
+Attemplts to load a previous state and initializes new state if it fails
+You'll be placed in the root (`/`) directory and prompted to enter commands:
+Terminal-based REPL loop (>> prompt)
+>>
+Input Parsing
+Tokenizes input into command and argument list
+Orchestration
+Routes parsed input to COMMANDS
+Handles program lifecycle: launch, run, exit
+Use `ex` to save and exit (keyboard interrupt is disabled)
+HashMap Fast lookup by path and help dictionary
