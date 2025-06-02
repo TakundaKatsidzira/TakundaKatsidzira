@@ -6,8 +6,8 @@ Welcome to my GitHub profile! I'm a Computer Science Student passionate about pr
 ## GOALS
 *  Learn Python;
 *  Learn OOP and Data Structures and Algorithms;
-*  Write readable, maintanable code and work on testing and debugging
-*  Complete Projects;
+*  Write readable, maintanable code and work on testing and debugging;
+*  Complete Projects that expose me to OOP, data structures and algorithms and teting;
 
 ## COURSES
 *  CS50P;
@@ -16,7 +16,7 @@ Welcome to my GitHub profile! I'm a Computer Science Student passionate about pr
 
 
 ## BOOKS
-*  Automate The Boring Stuff With Python;
+*  Automate The Boring Stuff With Python; 
 *  Beyond The Basic Stuff In Python;
 
 ## DATA STRUCTURES AND ALGORITHMS
@@ -77,7 +77,7 @@ Welcome to my GitHub profile! I'm a Computer Science Student passionate about pr
 
 * Build an accurate version of the Sequence game.
 * Implement board logic, card handling, and rules.
-* Support two or three players or teams.
+* Humna plays against computer.
 * Optimize for performance and allow AI agents with a mix of strategy and randomness.
 * Backtracking can simulate token placements and analyze optimal sequences.
 * Dynamic programming helps detect sequences efficiently on the grid by caching token alignments.
@@ -126,4 +126,3 @@ Welcome to my GitHub profile! I'm a Computer Science Student passionate about pr
 * **Trees**: Store crawl structure with depth.
 * **Hash Maps**: Store visited URLs with metadata.
 * **Stacks/Queues**: For DFS/BFS implementations.
-
