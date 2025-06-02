@@ -23,22 +23,27 @@
 
 ## 🚀 Projects  
 
-## [Crawly](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/crawly) — Web Graph Builder & Dead Link Analyzer
+## [Crawly](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/crawly) —  Graph Builder & Metrics Analysis
 -🧠 Designed a graph traversal engine that parses that constructs a directed graph using DFS, and applies topological sorting and cycle detection.
 -🚀 Reduced redundant network calls by 80% with memoized visited sets and child-node caching in an adjacency map (dict[str, PageNode])
 -🔍 Implemented cycle detection (via visited + recursion stack sets) and Kahn’s algorithm for topological sort to ensure acyclic site structure
 -🧪 Achieved 95%+ unit test coverage with mock-based HTTP simulations; validated graph accuracy, dead link detection, and edge-case handling
 
-### [Explorer](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/explorer) — Terminal File Manager with Smart Navigation
-
+### [Explorer](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/explorer) — Virtual File System with Terminal Control
 - 📂 Accelerated file and directory search by 42% by implementing BFS/DFS traversal strategies and optimizing for tree width/depth based on context.
 - ⚡ Improved Top-N/Bottom-N query performance to O(n log k) using heap-based selection algorithms via heapq, enabling responsive results across  files.
 - ❌ Minimized path resolution time from O(n) to O(1) through caching of resolved directory nodes, achieving a 70% performance gain in nested structures.  
  
-### [TicTacToe](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/tictactoe) — AI Simulation & Strategy Analytics  
-- ♟ Developed AI agents using random moves and minimax algorithms enhanced by memoized dynamic programming  
+### [TicTacToe](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/tictactoe) — Boardless game and Strategy Analytics  
+- ♟ Developed AI agents using random moves, rules  and minimax algorithms enhanced by memoized dynamic programming  
 - ⚙️ Reduced runtime by **70%** compared to naive recursive minimax with exponential time complexity (O(b^d))  
-- 🏆 Achieved a **35% higher win rate** for minimax agents versus random players, showing strategic effectiveness  
+- 🏆 Used bitmasks and bit manipulation to improve memory efficincy by 78% and make moves and check wins 90% faster  
+
+### [Sequence](https://github.com/TakundaKatsidzira/TakundaKatsidzira/tree/main/sequence) — Strategy Game and Minimax Agent
+- ⚡ Designed a recursive backtracking agent enhanced with memoization and state caching
+- 🧠 Achieved 97% reduction in rdundant state visits by avoiding recomputation using dynamic programming.
+- 🔍 Optimized brute force O(n^2) sequence matching to O(n) using sliding window technique
+
 
 ---
 

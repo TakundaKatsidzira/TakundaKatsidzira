@@ -1,11 +1,7 @@
 ## TAKUNDA KATSIDZIRA
 # 👋 Hey there, 
 
-Welcome to my GitHub profile! I'm a student passionate about data driven insights
-
-## 🚀 About Me
-
-Learning Programming with a interest in real world problem solving and AI
+Welcome to my GitHub profile! I'm a Computer Science Student passionate about problem solving, data driven insights and development.
 
 ## GOALS
 *  Learn Python;
@@ -15,7 +11,9 @@ Learning Programming with a interest in real world problem solving and AI
 
 ## COURSES
 *  CS50P;
+*  Data Structures and Algorithms;
 *  CS50AI;
+
 
 ## BOOKS
 *  Automate The Boring Stuff With Python;
@@ -61,22 +59,17 @@ Learning Programming with a interest in real world problem solving and AI
 
 ## TicTacToe
 
-* Game optimized for performance, where the computer plays itself using random choices (no strategy). Logs include: who played first, was it a draw, who won, did the first player win, first move position, full move sequence, number of moves, and win method (e.g., row_1, diag_anti) saved to a CSV file.
+* Game optimized for performance, where the computer plays itself using different strategies. Logs include: who played first, was it a draw, who won, did the first player win, first move position, full move sequence, number of moves, and win method (e.g., row_1, diag_anti) saved to a CSV file.
 * Develop multiple computer agents with different strategies.
 * Backtracking can be used to simulate future game states and evaluate optimal moves (e.g., using minimax).
-* Dynamic programming can cache board evaluations to avoid redundant computation during simulations.
+* Use bitmasks to simulate the board and agents moves
 
 **Techniques:**
 * **Backtracking**: Simulate future game states with Minimax to find the best move.
-* **Dynamic Programming**: Cache board evaluations to avoid recomputation during simulations.
 * **Bit Manipulation**: Represent board states compactly using bitmasks for speed.
-* **Prefix Sum**: Track cumulative results (like win rates for certain opening moves).
-* **Top K Elements**: Analyze the most common winning sequences/moves over many games.
 
 **Data Structures:**
-* **Arrays**: Represent the game board (3x3 grid).
 * **Hash Maps**: Cache board state evaluations (memoization).
-* **Heaps**: Store top strategies by win rate or efficiency.
 * **Stacks**: Enable undo/redo functionality for game simulations or replays.
 
 
@@ -94,52 +87,30 @@ Learning Programming with a interest in real world problem solving and AI
 * **Dynamic Programming**: Cache aligned token sequences to speed up win detection.
 * **Sliding Window**: Detect 5-in-a-row sequences on the board.
 * **Two Pointers**: Scan for sequences in linear directions.
-* **Prefix Sum**: Accelerate count of token alignments.
 
 **Data Structures:**
 * **2D Arrays**: Represent the board.
 * **Hash Maps**: Track card/token ownership.
-* **Tries**: Store patterns for token placement or card sequences.
-* **Graphs**: Represent player adjacency or strategic clustering.
-* **Stacks**: Allow undoing of token placements.
 
 ## Explorer
 
-* A file explorer for creating, reading, updating, and deleting files/folders starting from a root directory. Includes user/owner permissions and role-based access.
-* Command history and undo supported via a stack.
-* Autocorrect for commands and paths using edit distance + dynamic programming.
-* Trie stores valid commands and paths for fast prefix search and autocorrect.
+* A file explorer for creating, reading, updating, and deleting files/folders starting from a root directory. 
 * The filesystem is structured as a tree, and symbolic links (if supported) can introduce a DAG structure.
-* Backtracking enables undo/redo of file operations.
 * Heaps can identify top-N largest or most recent files.
 
 **Techniques:**
-* **Prefix Tree (Trie)**: Fast path/command suggestions.
-* **Stack**: Command history and undo.
+* **Heap**: Top-n analytics.
+* **Stack**: Command history.
 
 **Data Structures:**
 * **Trees**: Represent folder hierarchy.
-* **Tries**: Autocomplete paths.
 * **Stacks**: Command/operation history.
-* **Hash Maps**: Track permissions, file metadata.
 * **Heaps**: Find top-N largest or most modified files.
 
 
 ## Crawly
 
-## Given as a root a single text file URL, this file contains links to other files that contain links to other files and so on, Each of those links might also contain more links or be empty files forming a directed acrylic graph. 
-
-  ## **The gaol is to recursively traverse all links**
-## **detect cycles**
-## **Find dead links (unreachable)**
-##**Identify leaf nodes (files with no further links)**
-##**Rank files by size and by how often they were traversed**
-##**identify dependacies and dependancy depth**
-##**Find shortest path from root to leaf nodes**
-##**Use data structures and algorithms such as DFS,BFS, Topological Sort, Cyclic sort,hashing, Stacks and Queues, heaps, two heaps, Top K elements, backtracking , dynamic programming, bit manipulation with bitmasks,**
-## **Log analytics as well as statistics time and space complexity of data structures and algorithms used**
-## **Produce a report with details  of the analysis and computational complexity**
-
+* Build a DAG using links found in text files and analyze to track dependencies or find cycles. The goal is to recursively traverse all links, Find dead links (unreachable), Identify leaf nodes (files with no further links), Rank files by size and by how often they were traversed, identify dependacies and dependancy depth,Find shortest path from root to leaf nodes
 
 **Techniques:**
 * **DFS & BFS**: Traverse page links recursively or level-wise.
@@ -147,9 +118,7 @@ Learning Programming with a interest in real world problem solving and AI
 * **Dynamic Programming**: Cache visited URLs to prevent re-crawling.
 * **Topological Sort**: Analyze dependency/order of linked pages.
 * **Hashing**: Track depth and reachability metrics.
-* **Bitmasks can effeciently encode sets of visited nodes**
 * **Top K elements to rank files by how often they are traversed and size**
-* **Two pointers can be an alternative way to detect cycles**
 
 
 **Data Structures:**

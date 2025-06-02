@@ -1,1 +1,0 @@
-python src/analyze_data.py data/game_logs.csv
