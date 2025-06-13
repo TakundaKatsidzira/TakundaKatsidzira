@@ -10,27 +10,18 @@ LEETCODE
 ## STRINGS
 ...
 
-## TWO POINTERS
-...
-
-## SLIDING WINDOW
-...
-
-
-## PREFIX SUM
-...
-
-## INTERVALS
-...
-# MERGE
-# OVERLAPPING
-
 ## HASHING /MAPS/SETS
 ...
 # FUNCTIONS
 # TABLES
 # MAPS
 # SETS
+
+## TWO POINTERS
+...
+
+## SLIDING WINDOW
+...
 
 ### RECURSION
 ...
@@ -49,6 +40,11 @@ LEETCODE
 # QUICK
 # HEAP
 # TIM
+
+
+## PREFIX SUM
+...
+
 
 ## STACKS
 ...
@@ -72,14 +68,18 @@ LEETCODE
 ## IN PLACE TRAVERSAL OF LINKED LISTS
 ...
 
-## HEAPS
+## TREES
 ...
 
 ## TRIES
 ...
 
-## TREES
+## HEAPS
 ...
+
+## BACKTRACKING
+...
+
 
 ## GRAPHS
 ...
@@ -90,8 +90,6 @@ LEETCODE
 ## BFS
 ...
 
-## BACKTRACKING
-...
 
 ## DYNAMIC PROGRAMMING
 ...
@@ -101,6 +99,24 @@ LEETCODE
 ## MEMOIZATION
 ...
 
+## INTERVALS
+...
+# MERGE
+# OVERLAPPING
+
+## GREEDY
+...
+
+## DIVIDE AND CONQUER
+...
+
+
+## BIT MANIPULATION
+...
+
+## MATH AND GEOMETRY
+
+
 ## TOP K ELEMENTS
 ...
 
@@ -109,15 +125,4 @@ LEETCODE
 
 ## TOPOLOGICAL SORT
 ...
-
-## GREEDY
-...
-
-## DIVIDE AND CONQUER
-...
-
-## BIT MANIPULATION
-...
-
-## MATH AND GEOMETRY
-
+
