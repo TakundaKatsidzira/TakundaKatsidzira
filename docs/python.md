@@ -1,0 +1,36 @@
+PYTHON
+### NOTES FROM PYTHON PROGRAMMING COURSE CS50P.
+
+## VARIABLES
+...
+
+## LOOPS
+...
+
+## CONDITIONALS
+...
+
+## FUNCTIONS
+...
+
+## EXCEPTIONS
+...
+
+## LIBRARIES
+...
+
+## TESTING
+...
+
+## FILE I/O
+...
+
+## REGEX
+...
+
+## OOP
+...
+
+## PYTHON
+...
+
