@@ -84,13 +84,17 @@ For **Python engineering projects**, focused on **beginner to advanced levels**,
   * **Edge cases**
   * Go through examples and understan problem flow.
   * Rephrase problem, remove redundant information, abstract and break problem into tasks.
+  
 ---
 
 ### 📊 **2. Gather Information (Analyze Examples)**
 
 * Study provided examples and work them out manually.
 * Identify patterns in inputs/outputs.
-* start from what you already know and build
+* Start from what you already know and build
+* Ask questions like:
+* Existing tools functions and libraries to use.
+* Input Validation 
 * Think about:
   
   * Time and space constraints.
