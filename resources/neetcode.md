@@ -1,0 +1,120 @@
+LEETCODE
+NOTES FROM DATA STRUCTURES AND ALGORITHMS
+
+# ARRAYS
+...
+
+# STRINGS
+...
+
+# HASHING
+...
+## TABLES
+## FUNCTIONS
+
+# TWO POINTERS
+...
+
+# SLIDING WINDOW
+...
+
+# RECURSION
+...
+
+# BINARY SEARCH
+...
+
+# SORTING
+...
+## BUBBLE
+## SELECTION
+## INSERTION
+## MERGE
+## QUICK
+## HEAP
+## TIM
+
+
+# SUM
+...
+## PREFIX
+## POSTFIX
+
+
+# STACKS
+...
+
+# QUEUES
+...
+
+# MONOTONIC 
+...
+## STACKS
+## QUEUES
+
+# LINKED-LISTS
+...
+# SINGLY LINKED-LISTS
+# DOUBLY LINKED-LISTS
+
+# FAST AND SLOW POINTERS
+...
+
+# IN PLACE TRAVERSAL OF LINKED LISTS
+...
+
+# TREES
+...
+
+# TRIES
+...
+
+# HEAPS
+...
+
+# BACKTRACKING
+...
+
+# GRAPHS
+...
+
+# DFS
+...
+
+# BFS
+...
+
+# DYNAMIC PROGRAMMING
+...
+## 1-D
+## 2-D
+
+# MEMOIZATION
+...
+
+# INTERVALS
+...
+
+# GREEDY
+...
+
+# DIVIDE AND CONQUER
+...
+
+
+# BIT MANIPULATION
+...
+
+# MATH AND GEOMETRY
+
+
+# TOP K ELEMENTS
+...
+
+# K WAY MERGE
+...
+
+# TOPOLOGICAL SORT
+...
+
+
