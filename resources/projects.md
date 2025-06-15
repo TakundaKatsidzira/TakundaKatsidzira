@@ -71,8 +71,3 @@
 * Read and write operations on files.
 * Run from command line
 
-# Path Finder 
-...
-* Develop a Road Network and a shortest path finder algorithm.
-* Find and print shortest path between two random locations.
-* Run from command line
