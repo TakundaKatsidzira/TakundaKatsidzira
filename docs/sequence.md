@@ -1,4 +1,0 @@
-### NOTES FROM PROJECTS.
-
-## SEQUENCE
-...

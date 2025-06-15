@@ -1,40 +1,35 @@
 # CAREER GUIDE
 
-## FIND THE BALANCE BETWEEN A BIAS FOR ACTION AND DEEP DIVE. 
-## GET COMFORTABLE WITH NOT KNOWING, GETTING STUCK, BEING CONFUSED AND FRUSTRATED, THATS HOW YOU LEARN.
-## NEVER STAY TO LONG IN YOUR COMFORT ZONE.
-## LEARN TO GO FAST AND SLOW.
-## CURIOSITY AND OBSESSION.
+## BALANCE A BIAS FOR ACTION AND CURIOSITY. 
+## KNOW WHEN TO MOVE ON TO THE NEXT PROBLEM AND WHEN TO DEEP DIVE INTO TOPICS.
+## LEARN TO LEARN FAST AND SLOW. 
+## GET COMFORTABLE CONFUSION AND FRUSTRATION.
+## NEVER STAY TOO LONG IN YOUR COMFORT ZONE.
+## FIND PROJECTS THAT ARE INTERESTING TO YOU AND TRY YOUR HAND IN DIFFERENT DOMAINS.
+## DIVE DEEP INTO WHAT YOU GRAVITATE TORWARDS
+## LOOK FOR PAYING OPPORTUNITIES
+## YOUR NETWORK IS YOUR NET WORTH
+## HAVE FUN AND BE READY
 
-## PRIORITIZE ABILITY, EXPERIENCE, NETWORK. 
+* Project Driven
+* Continously work on Projects and Leetcode.
 
-# ABILITY
-* Consistently work on Projects and Leetcode, complete atleast 5 leetcode questions and a project task daily.
-* Practice programming fundamentals and problem solving.  
-##
-* CS Fundamentals and Python Programming. 
-* Object Oriented Design.
-* Data Structures and Algorithms.
-* Software Development.
+* First Leetcode, do the bare minimum for each topic upto binary search. Thats all the easys and some mediums you can manage.
+* Meanwhile work on the building the projects using procedures, functions and basic data structures.
 
-# Experience
-* Additional projects for any univeristy/ local organisation automating work, building tools and infrastucture.
-* Volunteer or Open source if nothing is available. Reach out or search for projects on Friday and work with weekly deadlines. 
-##
-* Additional experience thats relevant includes Teaching Assistant, Tutoring and Research.
-* Competitive Programming and Professional Development organizations and events.
-* When talking about experinece talk impact not description.
+* Continue with leetcode bare minimum while learning OOP to build to build linked lists, trees, heaps, graphs and tries.
+* Refactor projects or branch  to optimize, apply OOP, Design Patterns,  SOLID and DRY principles.
 
-# Network
-* Start Grind28 with peers to work through neetcode 250 and collaborate on projects together.
-* Use LinkedIn and ColorStack and Alumni to reach out to people at target companies for coffee chats 
-## Coffee chat
-* Life working at company, is it really the dream its played out to be.
-* How you got there, application and interview experience (technical/behavioral), what you would prioritize.
-* How you learnt programming, and advice you'd give someone starting on how to learn in general.
-* Any resources you recommend or connections you can refer me to for another coffee chat or recruiting referalls.
-* Weekly check ins with other questions relevant to their experience. 
+* Continuously take on new challenges tackling Databases, Web Development, Data Analysis, and AI.
+* Build real world experience through internships, freelancing, open source and competitive programming. 
+* Consider teaching, research and tutoring.
+* Take note of the impact the work you do.
 
-## Apply to as many intern positions as possible as early as possible
+* Grow your network with peers ahead of you through Colorstack and Linkedin.
+* Have weekly coffee chats with people about heir learning application technical/behavioural interview and work experience.
+* Ask for guidance, resources and referalls to other engineers or recruiters.  
 
-
+* Improve your resume
+* Work on your interviewing skills
+* Keep track of opening dates for positions and apply to as many places as possible as early as possible.
+* Keep a referall graph and try to get as many referalls as you can during recruiting season.
