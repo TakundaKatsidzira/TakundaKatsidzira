@@ -1,5 +1,11 @@
 # CAREER GUIDE
 
+## FIND THE BALANCE BETWEEN A BIAS FOR ACTION AND DEEP DIVE. 
+## GET COMFORTABLE WITH NOT KNOWING, GETTING STUCK, BEING CONFUSED AND FRUSTRATED, THATS HOW YOU LEARN.
+## NEVER STAY TO LONG IN YOUR COMFORT ZONE.
+## LEARN TO GO FAST AND SLOW.
+## CURIOSITY AND OBSESSION.
+
 ## PRIORITIZE ABILITY, EXPERIENCE, NETWORK. 
 
 # ABILITY
@@ -7,9 +13,9 @@
 * Practice programming fundamentals and problem solving.  
 ##
 * CS Fundamentals and Python Programming. 
-* Object Oriented Design
-* Data Structures and Algorithms
-* Software Development
+* Object Oriented Design.
+* Data Structures and Algorithms.
+* Software Development.
 
 # Experience
 * Additional projects for any univeristy/ local organisation automating work, building tools and infrastucture.
@@ -18,7 +24,6 @@
 * Additional experience thats relevant includes Teaching Assistant, Tutoring and Research.
 * Competitive Programming and Professional Development organizations and events.
 * When talking about experinece talk impact not description.
-
 
 # Network
 * Start Grind28 with peers to work through neetcode 250 and collaborate on projects together.

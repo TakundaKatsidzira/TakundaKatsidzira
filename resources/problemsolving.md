@@ -3,14 +3,12 @@
 # Practical Learning 
 
 * Start with a problem from Projects or Leetcode.
-* Attempt it on your own, using the problem solving guides below
+* Attempt it on your own, using the problem solving guides below.
 * Struggle for a little bit of time to come up with your own solution to the minimum task, max 15 minutes.
 * Look up solution through availale solutions, answers sections, online or AI.
-* Study solution until you understand it, documenting ideas, topics, techniques and tools for further reading.
-* Research further reading material in books, courses, tutorials and AI. 
+* Study solution until you understand it, documenting ideas, topics, techniques and tools for further reading. 
 * Retry problem, and repeat previous steps until you can solve it on your own. 
-* Look into optimizations, improvements and alternative solutions. 
-* Look for similar problems and see if solution can be generalized or modified to work on them.
+* Look into optimizations, improvements and alternative solutions.
 * Document new information in journal and take notes of patterns techniques and tools for future problems.
 * Move on as needed.
 
@@ -18,14 +16,14 @@
 
 For **Python projects**, focused on  **programming fundamentals, OOP, debugging, and testing**:
 
-## 🧠 **1. Define and Understand the Problem**
+## 🧠 **0. Define and Understand the Problem**
 
 *  Identify inputs, outputs, processes, flow, edge cases and constraints .
 *  Organize ideas modules, classes, function and variables.
 *  Break the problem into minimal sub-tasks.
 *  Document all requirements. 
 
-## 📚 **2. Brainstorm**
+## 📚 **1. Brainstorm**
 
 *  For each sub task brainstorm solutions.
 *  Start from what you are given then what you already know and build on that.
@@ -34,7 +32,7 @@ For **Python projects**, focused on  **programming fundamentals, OOP, debugging,
 *  Try to come up with a solution based off that.
 
 
-## 📉 **3. Analyze and Organize**
+## 📉 **2. Analyze and Organize**
 
 *  Organize thoughts into possible solutions.
 *  Research to fill in gaps and get unstuck.
@@ -42,7 +40,7 @@ For **Python projects**, focused on  **programming fundamentals, OOP, debugging,
 *  Consider trade-offs and perform risk assessment.
 *  Pick best solution.
 
-## 🏗️ **4. Design and Develop**
+## 🏗️ **3. Design and Develop**
 
 * Create detailed designs for modules,  classes, functions and variables.
 * Define the program flow from start to end with inputs, processes and outputs.
@@ -51,7 +49,7 @@ For **Python projects**, focused on  **programming fundamentals, OOP, debugging,
 * Use version control and design documentation best practices.
 * Debug as needed and incrementally build up to the full solution.
 
-## 🧪 **5. Tests and Validate**
+## 🧪 **4. Tests and Validate**
 
 * Test against the original requirements and constraints.
 * Test Performance and scalability.
@@ -60,7 +58,7 @@ For **Python projects**, focused on  **programming fundamentals, OOP, debugging,
 * Work in feedback loop of increaing test coverage and improving the program 
 ---
 
-## 📦 **6. Refactor Review and Optimize**
+## 📦 **5. Refactor Review and Optimize**
 
 * Refactor for readablity, performance, reliability,  scalability and implementing new features.
 * Add comments, docstrings type hints and format code.
@@ -71,30 +69,32 @@ For **Python projects**, focused on  **programming fundamentals, OOP, debugging,
 
 # FOR LEETCODE
 
-## 🔧 **1. Understand the Problem Clearly **
+## 🔧 **0. Understand the Problem Clearly **
 
 * **Read the full problem statement carefully, three times.**
 * Identify and ask questions:
+  * **Desciption**
   * **Input format**
   * **Output format**
+  * **Examples**
   * **Constraints**
   * **Edge cases**
-  * Go through examples, work them out and understand problem flow.
+  * **Work out examples manualy**
   * Rephrase problem, remove redundant information, abstract and break problem into tasks.
 ---
 
-## 📊 **2. Gather Information (Analyze Examples)**
+## 📊 **1. Gather Information (Analyze Examples)**
 
 * Identify patterns in inputs/outputs and examples.
-* Experiment with other inputs and examples to see what comes up.
-*  Start from what you are given then what you already know and build on that.
-*  Brainstorm and note ideas without evaluation.
+* Experiment with other inputs as examples to see what comes up, find edge cases or hickups.
+* Start from what you are given then what you already know and build on that.
+* Brainstorm and note ideas without evaluation.
 * Ask questions like:
 * Existing tools functions and libraries to use.
 * Input Validation, size
 ---
 
-## 🧠 **3. Consider Multiple Approaches 
+## 🧠 **2. Consider Multiple Approaches** 
   * Consider different solution strategies using different data structures, algorithms and patterns.
   * Compare time/space complexity of your ideas.
 ``* Try:
@@ -105,24 +105,24 @@ For **Python projects**, focused on  **programming fundamentals, OOP, debugging,
 ---
 
 
-### 🏗️ **4. Design and Develop**
+### 🏗️ **3. Design and Develop**
 
-*  In solution class develop functions to solve.
+* In solution class develop functions to solve.
 * Write clean, modular code.
 * Use helper functions if needed.
 * Follow naming conventions.
 * Use comments for clarity if needed.
 * Build incrementally—don’t write everything before testing.
 
-### 🧪 **5. Review Test and Validate**
+### 🧪 **4. Review Test and Validate**
 
 * Use all provided test cases.
 * Add your own:
-  * Edge cases   * Corner cases (repeats, unordered input)
+* Edge cases , Corner cases (repeats, unordered input)
 * Use print/debug statements or IDE debugger if needed.
 * Analyze complexity of solution.
 
-### 📈 **6. Submit Revise, and Document
+### 📈 **5. Submit Revise, and Document**
 * Submit the solution.
 * Review:
   * Time Complexity.
