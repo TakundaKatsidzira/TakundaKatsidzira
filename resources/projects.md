@@ -45,22 +45,14 @@
 # Contact Book
 ...
 * Develop a Contact Book to record client contact info and adddress.
-* Operations include to load and save contact book and to enter , access, change , and remove client records.
+* Operations include  to enter , access, change , and remove client records.
+* Load and Save contact book to file and print book.
 * Run from command line. 
 
 # Vending Machine 
 ...
 * Develop a Vending Machine to store and dispense snacks.
 * Operations include to load, update and save inventory of snacks and change and processing orders. 
-* Run from command line
-
-# Audio Player 
-...
-* Develop an Audio Player to download and play audio.
-* Operations include to load library from local audio files.
-* Create Random Playlist from library.
-* Playback controls such as play, pause.
-* Playlist controls such as shuffle, next, previous.  
 * Run from command line
 
 # File Explorer 
