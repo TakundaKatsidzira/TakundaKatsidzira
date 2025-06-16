@@ -7,8 +7,9 @@
 * Decide on a Minimum Viable Product (MVP).
 * Break the solution into minimal sub-tasks to implement one by one.
 * For each problem experiment with small examples, testable procedures to come up with a solution.
-* Design a procedural algorithm to solve the problem handling edge cases, and constraints
-* Develop, test and validate solution.
+* Design a procedural algorithm to solve the problem handling edge cases, and constraints.
+* Develop a working solution first, can be suboptimal, test and validate solution.
+* Incrementally optimize complexity.
 
 ## 🧱 **1. Object-Oriented Design**
 
