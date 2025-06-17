@@ -1,7 +1,5 @@
 ## PYTHON PROJECTS
 
-Working with skeleton code
-
 ## 🧠 **0. Define and Understand the Problem**
  
 * Identify inputs, outputs, data, processes.
@@ -36,20 +34,17 @@ Working with skeleton code
 ## **PROJECTS**
 
 # Contact Book
-...
 * Develop a Contact Book to record client contact info and adddress.
 * Operations include  to enter , access, change , and remove client records.
 * Load and Save contact book to file and print book.
 * Run from command line. 
 
 # Vending Machine 
-...
 * Develop a Vending Machine to store and dispense snacks.
 * Operations include to load, update and save inventory of snacks and change and processing orders. 
 * Run from command line
 
 # File Explorer 
-...
 * Develop a File Explorer for text files that uses virtual memory.
 * Operations include create and delete files and folders in current working directory.
 * Print and change current working directory.
@@ -57,6 +52,4 @@ Working with skeleton code
 * Run from command line
 
 # FINAL PROJECT
-
 # SEQUENCE
-

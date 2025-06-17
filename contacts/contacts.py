@@ -1,115 +1,42 @@
-"""
-NEXT STEPS
+def load_contacts():
+    pass
 
+def save_contacts(contacts):
+    pass
 
-ADD LIST CLIENTS
-ADD SAVE AND LOAD
-MULTIPLE CONTACT BOOKS
-GET TO GET ALL DATA OR ONE VALUE
-CASE INSENSITIVITY
-ONLY TAKE KEY IN PHONE EMAIL
-"""
+def add_contact(contacts):
+    pass
 
+def access_contact(contacts):
+    pass
 
+def change_contact(contacts):
+    pass
 
-# add client records
-def add(contacts):
-    name = input("Enter client name: ")
-    phone = input("Enter client phone: ")
-    email = input("Enter client email: ")
+def remove_contact(contacts):
+    pass
 
-    contacts[name] = {
-        "phone" : phone,
-        "email" : email
-    }
-    return
-
-# change client info
-def update(contacts):
-    name = input("Enter client name: ")
-    key = input("Enter data type: ")
-    value = input("Enter data: ")
-
-    # client doesn't exist
-    if name not in contacts:
-        print("Client not found")
-        return
-    
-    # field doesn't exist
-    elif key not in contacts[name]:
-        print("Invalid field name")
-        return
-    
-    # index into dict of dict
-    contacts[name][key] = value
-    return
-
-# print client info            
-def get(contacts):
-    name = input("Enter client name: ")
-    key = input("Enter data type: ")
-
-    # client doesn't exist 
-    if name not in contacts:
-        print("Client not found")
-        return
-    
-    # field doesn't exist
-    elif key not in contacts[name]:
-        print("Invalid field name")
-        return
-    else:
-        print(contacts[name][key]) 
-        return
-            
-# remove client record
-def delete(contacts):
-    name = input("Enter client name: ")
-
-    # client doesn't exist
-    if name in contacts.keys():
-        del contacts[name]
-        print(f"Deleted {name}")
-        return
-    else:
-        print("Client not found")
-        return
-
+def print_contacts(contacts):
+    pass
 
 def main():
-    contacts = {}
-    print("Contact Book Opened")
-    print("Enter valid integer choice.")
-    print("0. Quit, 1. Enter Client Record, 2. Update Client Info, 3. Retrieve Client Info, 4. Delete Client Record.")
+    contacts = load_contacts()
     while True:
-
-        # get integer choice
-        try:
-            choice = int(input(">> "))
-        except ValueError:
-            print("Enter Valid integer [0:4]")
-            continue
-
-        # map input to function 
-        actions = {
-            1 : add,
-            2 : update,
-            3 : get,
-            4 : delete
-        }
-        if choice in actions:
-            actions[choice](contacts)
-
-        # quit    
-        elif choice == 0:
-            print("Contact Book Closed")
+        print("\n1. Add 2. Access 3. Change 4. Remove 5. Print 6. Save & Exit")
+        choice = input("Choose: ")
+        if choice == '1':
+            add_contact(contacts)
+        elif choice == '2':
+            access_contact(contacts)
+        elif choice == '3':
+            change_contact(contacts)
+        elif choice == '4':
+            remove_contact(contacts)
+        elif choice == '5':
+            print_contacts(contacts)
+        elif choice == '6':
+            save_contacts(contacts)
             break
-        
-        # invalid input
-        else:
-            print("Integer choice not in range")
-    
-    return
 
 if __name__ == "__main__":
     main()
