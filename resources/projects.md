@@ -3,8 +3,6 @@
 ## 🧠 **0. Define and Understand the Problem**
  
 * Identify inputs, outputs, data, processes.
-* Organize ideas into these categories.
-* Decide on a Minimum Viable Product (MVP).
 * Break the solution into minimal sub-tasks to implement one by one.
 * For each problem experiment with small examples, testable procedures to come up with a solution.
 * Design a procedural algorithm to solve the problem handling edge cases, and constraints.
@@ -32,14 +30,6 @@
 * Branch and experiment with trade-offs introduced by design patterns.
 * Refactor code for readability, performance, scalability, and reliability.
 
-## **STUCK**
-
-* If stuck for more than 15 minutes, look up solution.
-* Take note if whats missing is small and try again.
-* Else learn solution as is and note any topics and concepts youre unfamiliar with.
-* At your discretion decide if you want to deep dive into any of these topics.
-* If topic is foundational to all the following deep dive else get to it when it comes up again.
-* If frustrated take a break touch grass and come back.
 
 ## **PROJECTS**
 
@@ -63,4 +53,8 @@
 * Print and change current working directory.
 * Read and write operations on files.
 * Run from command line
+
+# FINAL PROJECT
+
+# SEQUENCE
 
