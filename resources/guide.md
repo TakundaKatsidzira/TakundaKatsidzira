@@ -1,35 +1,31 @@
-## CAREER GUIDE
-## LEETCODE
-## BALANCE A BIAS FOR ACTION AND CURIOSITY. 
-## KNOW WHEN TO MOVE ON TO THE NEXT PROBLEM AND WHEN TO DEEP DIVE INTO TOPICS.
-## LEARN TO LEARN FAST AND SLOW. 
+# CAREER GUIDE
+
+## THE 3 THINGS THAT MATTER ARE EXPERIENCE,NETWORK AND ABILITY 
+
+# ABILITY
+## PRACTICE CONSISTENTLY THROUGH PROJECTS AND LEETCODE.
+## BE CURIOS AND ACTIVE. 
+## BALANCE LEARNING NEW MATERIAL AND USING EXISTING KNOWLEDGE.
+## KNOW WHEN TO GO FAST AND WHEN TO SLOW DOWN.
 ## GET COMFORTABLE CONFUSION AND FRUSTRATION.
 ## NEVER STAY TOO LONG IN YOUR COMFORT ZONE.
-## FIND PROJECTS THAT ARE INTERESTING TO YOU AND TRY YOUR HAND IN DIFFERENT DOMAINS.
-## DIVE DEEP INTO WHAT YOU GRAVITATE TORWARDS
-## LOOK FOR PAYING OPPORTUNITIES
-## YOUR NETWORK IS YOUR NET WORTH
-## HAVE FUN AND BE READY
+## BUILD A STRONG FOUNDATION, STRONG FOCUS ON COMPUTER SCIENCE, PROBLEM SOLVING, PROGRAMMING, DATA STRUCTURES AND ALGORITHMS.
+## GET A FEEL FOR THE DIFFERENG SPACES, WEB, DATABASES, ANALYTICS, AI FROM CS50.
 
-* Project Driven
-* Continously work on Projects and Leetcode.
+# EXPERIENCE 
+## PORTFOLIO PROJECTS IN DIFFERENT FIELDS
+## APPLY FOR INTERNSHIPS, RESEARCH AND TEACHING ASSITANT, TUTORING, COMPETITIVE PROGRAMMING.
+## LOOK FOR FREELANCE OR OPEN SOURCE PROJECTS AND GET FAMILIAR WITH CONTRIBUTING TO CODEBASES.
+## ANY WORK IS GOOD WORK, PAID WORK IS BEST BUT ANYTHING CONTRIBUTES.
+## KEEP NOTES OF THE IMPACT OF YOUR CONTRIBUTION AND HIGHLIGHTS THEM IN YOUR RESUME.
+## USE KEYWORDS AND STATISTICS NOT DESCRIPTIONS
+## KEEP TRACK OF OPENING DATES AND DEADLINES FOR POSITIONS
+## APPLY TO JOBS EVERY WEEKEND
 
-* First Leetcode, do the bare minimum for each topic upto binary search. Thats all the easys and some mediums you can manage.
-* Meanwhile work on the building the projects using procedures, functions and basic data structures.
+# NETWORK
 
-* Continue with leetcode bare minimum while learning OOP to build to build linked lists, trees, heaps, graphs and tries.
-* Refactor projects or branch  to optimize, apply OOP, Design Patterns,  SOLID and DRY principles.
-
-* Continuously take on new challenges tackling Databases, Web Development, Data Analysis, and AI.
-* Build real world experience through internships, freelancing, open source and competitive programming. 
-* Consider teaching, research and tutoring.
-* Take note of the impact the work you do.
-
-* Grow your network with peers ahead of you through Colorstack and Linkedin.
-* Have weekly coffee chats with people about heir learning application technical/behavioural interview and work experience.
-* Ask for guidance, resources and referalls to other engineers or recruiters.  
-
-* Improve your resume
-* Work on your interviewing skills
-* Keep track of opening dates for positions and apply to as many places as possible as early as possible.
-* Keep a referall graph and try to get as many referalls as you can during recruiting season.
+## USE RESOURCES LIKE LINKEDIN AND COLOSTACK.
+## SCHEDULE WEEKLY CALLS WITH AS MANY ENGINEERS AND RECRUITERS YOU CAN CONNNECT TO. 
+## ASK FOR GUIDUIANCE, AND REFERRALS ABOUT LEARNING, APPLICATIONS, INTERVIEWS AND WORKING.
+## LOOK FOR ALUMNI AND REFERALL NETWORKS.
+## ATTEND COMMUNITY EVENTS AND GROUPS. 
