@@ -1,5 +1,7 @@
 ## PYTHON PROJECTS
 
+Working with skeleton code
+
 ## 🧠 **0. Define and Understand the Problem**
  
 * Identify inputs, outputs, data, processes.
