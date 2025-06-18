@@ -1,6 +1,6 @@
 # PROBLEM SOLVING STEPS
 
-# 0. Understand the Problem
+# 0. Understand
 
 * Read the problem statement thoroughly.
 * Don’t rush. Aim to fully grasp what is being asked before even thinking of code.
@@ -20,7 +20,7 @@
 * Highlight key constraints.
 * Comment or mark things like time/space limits, input sizes, and unique rules.
 
-# 1. Work Through Examples
+# 1. Examples
 
 * Simulate given examples cases manually.
 * Step through them as if you were the machine, and observe how inputs are transformed into outputs.
@@ -34,7 +34,7 @@
 * Look for repeated patterns.
 * Take note of what parts repeat, grow, or change. This helps in identifying algorithmic approaches.
 
-# 2. Start With a Naive (Brute Force) Solution**
+# 2. Brute Force
 
 * Formulate a basic approach first.
 * Even if inefficient, this helps you understand the mechanics of solving the problem.
@@ -46,7 +46,7 @@
 * Comment the logic in plain language or pseudocode. Think out loud in comments.
 
 
-# 3. Explore Optimization Opportunities and Different Approaches
+# 3. Brainstorm
 
 * Look for patterns or key data structures.
 * Ask yourself:
@@ -60,7 +60,7 @@
 * Compare multiple approaches.
 * Consider trade-offs (e.g., readability vs. performance).
 
-# 4. Plan Your Implementation Clearly
+# 4. Psuedocode
 
 * Write pseudocode or step-by-step logic.**
   Before writing code, outline:
@@ -71,8 +71,7 @@
 * Validate with your examples.
 * Walk your pseudocode through the sample inputs again to make sure it aligns with the expected outputs.
 
-# 5. Implement Your Solution Carefully
-
+# 5. Code
 * Code from your plan.
 * Use your pseudocode as a checklist for the actual implementation.
 
@@ -88,7 +87,7 @@
 * Use all test cases, especially edge cases.
 * Don’t stop at the example inputs; create ones that test size limits and boundary conditions.
 
-# 6. Test and Refine
+# 6. Test
 
 * Run all test cases, including edge and large inputs.
 
@@ -103,7 +102,7 @@
 * Clean up code once it works. Make it more elegant or concise if possible without sacrificing readability.
 
 
-# 7. Review, Reflect, and Reinforce
+# 7. Reflect
 
 * If your solution is accepted:
   * Review your logic.
@@ -123,8 +122,9 @@
 * Study unfamiliar concepts.
 * If the problem involved something you don’t know well, bookmark it and study it separately.
 
-# 8. When You’re Stuck
+# 8. Confused
 
+* Time yourself, 2 hour max sprints.
 * If stuck for >15 minutes without a brute force idea, look up hints or solutions.**
 
 * Don’t just read—understand.
@@ -136,7 +136,7 @@
 * Revisit later.
 * If still unclear, flag the problem and revisit after a break or after solving similar problems.
 
-# 9. Take Care of Yourself
+# 9. Health
 
 * Don’t let frustration build.
 * If you’re stuck or angry, step away—touch grass, hydrate, take a walk.
@@ -154,7 +154,6 @@
 # 0. Array / List
 
 * Main Idea: Contiguous block of memory with fixed or dynamically allocated size.
-
 * Purpose: Store elements in order, allow quick index-based access.
 
 * Time Complexity:
@@ -175,7 +174,6 @@
 # 1. HashMap / HashSet
 
 * Main Idea: Uses a hash function to map keys to indices in an underlying array.
-
 * Purpose: Efficient key-based access and fast existence checks.
 
 * Time Complexity: Average O(1) for insert, delete, lookup (O(n) worst-case with collisions).
@@ -194,7 +192,6 @@
 # 2. Stack
 
 * Main Idea: Elements are added and removed from the same end.
-
 * Purpose: Model LIFO "recent-first" behaviors.
 
 * Time Complexity: O(1) push and pop
@@ -235,7 +232,6 @@
 # 4. Linked List
 
 * Main Idea: Nodes connected by pointers; each node holds data + next (and possibly previous) pointer.
-
 * Purpose: Dynamic size without needing resizing or shifting.
 
 * Time Complexity:
@@ -255,7 +251,6 @@
 # 5. Tree / Binary Search Tree (BST)
 
 * Main Idea: Hierarchical structure; BST has left < root < right ordering.
-
 * Purpose: Maintain sorted data with log-time insert, delete, and search.
 
 * Time Complexity:
@@ -275,7 +270,6 @@
 # 6. Priority Queue / Heap
 
 * Main Idea: Binary heap (min or max) to maintain priority ordering efficiently.
-
 * Purpose: Always access and remove the element with the highest/lowest priority.
 
 * Time Complexity:
@@ -296,7 +290,6 @@
 # 7. Trie (Prefix Tree)
 
 * Main Idea: Tree structure where each node represents a character; paths represent words.
-
 * Purpose: Efficiently store and search prefixes.
 
 * Time Complexity: O(k) for search/insert (k = length of word)
@@ -314,7 +307,6 @@
 # 8. Graph (Adjacency List / Matrix)
 
 * Main Idea: Nodes (vertices) connected by edges (can be weighted, directed, etc.)
-
 * Purpose: Model relationships, paths, and dependencies.
 
 * Time Complexity:
