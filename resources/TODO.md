@@ -13,6 +13,8 @@
 
 # WORK
 
-* Practice stack binary search and linked lists.
-* Study oop structures and algos.
+* Practice stacks, binary search and linkedlists.
+* Study two pointers, sliding window and binary search.
 * Refactor lists hash deque linked lists classes.
+
+

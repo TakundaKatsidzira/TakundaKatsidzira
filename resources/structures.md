@@ -60,7 +60,6 @@
 * Delete at index i in doubly by traversing to ith and setting its prev's next to its next and its next's prev to its prev.  
 * Useful when operations include many insertions and deletions and random access is not needed.
 
-
 # 5. Tree / Binary Search Tree (BST)
 
 * Main Idea: Hierarchical structure; BST has left < root < right ordering.

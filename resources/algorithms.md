@@ -1,14 +1,14 @@
-# 📈 Common Algorithms / Patterns (Expanded)
+# 📈 Common Algorithms and Patterns 
 
 # 0. Two Pointers
 
 * Main Idea: Use two indices to iterate from different ends or parts of a collection.
 
 * Use When:
-  * Working with **sorted arrays** (e.g., pair sum to target)
-  * **Removing duplicates** (e.g., in-place operations)
-  * **Palindrome checking**
-  * **Partitioning** or **merging**
+  * Working with sorted arrays (e.g., pair sum to target)
+  * Removing duplicates (e.g., in-place operations)
+  * Palindrome checking
+  * Partitioning or merging
 
 * Why It Helps:
   * Reduces O(n²) to O(n)

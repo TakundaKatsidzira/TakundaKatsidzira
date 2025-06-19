@@ -1,6 +1,6 @@
 # PROBLEM SOLVING
 
-# Health Fisrt
+# Health First
 
 * Don’t let frustration build.
 * If you’re stuck or angry, step away—touch grass, hydrate, take a walk.
