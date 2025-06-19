@@ -55,15 +55,15 @@
 
 *     Overload +
     def __add__(self, other):
-        return Number(self.value + other.value)
+        * return Number(self.value + other.value)
 
 *     Overload -
     def __sub__(self, other):
-        return Number(self.value - other.value)
+        * return Number(self.value - other.value)
 
 *     Overload *
     def __mul__(self, other):
-        return Number(self.value * other.value)
+        * return Number(self.value * other.value)
 
 *     Overload /
     def __truediv__(self, other):
