@@ -1,0 +1,150 @@
+
+class Stack:
+    """
+    Stack implemented using a Python list.
+
+    🔹 Demonstrates Abstraction: users interact with push/pop instead of directly manipulating the list.
+    🔹 Can be extended (Inheritance) to add features like max size or logging.
+    """
+
+    def __init__(self):
+        self._items = []  # 🔐 Encapsulation: internal list is hidden (prefix underscore)
+                          # 🧬 Attribute: holds the state of the object
+
+    def push(self, item):
+        """
+        Add an item to the top.
+
+        🔹 Instance Method: modifies object state, uses 'self'.
+        🔹 Encapsulates logic of list append.
+        """
+        self._items.append(item)
+
+    def pop(self):
+        """
+        Remove and return the top item.
+
+        🔹 Abstraction: user doesn’t see how item is removed.
+        🔹 Polymorphism: can be overridden in a subclass for safe pop.
+        """
+        if self.is_empty():
+            raise IndexError("Stack is empty")
+        return self._items.pop()
+
+    def peek(self):
+        """
+        Return the top item without removing it.
+
+        🔹 Abstraction: shields user from internal indexing logic.
+        """
+        return self._items[-1] if not self.is_empty() else None
+
+    def is_empty(self):
+        """
+        Returns True if stack is empty.
+
+        🔹 Read-only method: could be marked as a property.
+        🔹 Encapsulates logic for checking state.
+        """
+        return len(self._items) == 0
+
+class Queue:
+    """
+    Queue using a Python list with pop(0) for dequeue (FIFO).
+
+    🔹 Demonstrates Abstraction: user doesn't deal with index shifts.
+    🔹 Inheritance-ready for custom priority queues, etc.
+    """
+
+    def __init__(self):
+        self._items = []  # 🔐 Encapsulation: internal data is hidden from the user
+
+    def enqueue(self, item):
+        """
+        Add item to the rear.
+
+        🔹 Method: alters the internal state.
+        🔹 Encapsulation: controls how elements are added.
+        """
+        self._items.append(item)
+
+    def dequeue(self):
+        """
+        Remove and return item from the front.
+
+        🔹 Encapsulation: shields pop(0)'s complexity from caller.
+        🔹 Polymorphic potential: override for performance (use collections.deque).
+        """
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        return self._items.pop(0)
+
+    def is_empty(self):
+        """
+        Check if queue is empty.
+
+        🔹 Simple getter method (could be a @property).
+        🔹 Encapsulation: user doesn't check _items directly.
+        """
+        return len(self._items) == 0
+
+class Deque:
+    """
+    Deque allows insertion and removal from both ends.
+
+    🔹 Demonstrates Abstraction: client code uses named methods.
+    🔹 Inheritance: base for implementing advanced structures (e.g., PalindromeChecker).
+    """
+
+    def __init__(self):
+        self._items = []  # 🔐 Encapsulation: hides actual storage implementation
+
+    def add_front(self, item):
+        """
+        Add item to the front.
+
+        🔹 Method: encapsulates list insert(0).
+        🔹 Abstracts underlying data structure from user.
+        """
+        self._items.insert(0, item)
+
+    def add_rear(self, item):
+        """
+        Add item to the rear.
+
+        🔹 Abstraction: user just calls a clear method name.
+        """
+        self._items.append(item)
+
+    def remove_front(self):
+        """
+        Remove and return front item.
+
+        🔹 Polymorphism potential: override to improve performance.
+        🔹 Encapsulates boundary checking.
+        """
+        if self.is_empty():
+            raise IndexError("Deque is empty")
+        return self._items.pop(0)
+
+    def remove_rear(self):
+        """
+        Remove and return rear item.
+
+        🔹 Encapsulation: hides index logic.
+        🔹 Can be extended to log history (Inheritance).
+        """
+        if self.is_empty():
+            raise IndexError("Deque is empty")
+        return self._items.pop()
+
+    def is_empty(self):
+        """
+        Check if deque is empty.
+
+        🔹 Simple getter method.
+        🔹 Could be turned into a read-only property (@property).
+        """
+        return len(self._items) == 0
+
+
