@@ -50,36 +50,36 @@
 * Defines custom behaviour for built in operators like '+', '=' , '>' etc when used with objects.
 * Python has the following dunder special methods for implementing operator overloading.
 * Example
-    def __init__(self, value):
+*    def __init__(self, value):
         self.value = value
 
-     Overload +
+*     Overload +
     def __add__(self, other):
         return Number(self.value + other.value)
 
-     Overload -
+*     Overload -
     def __sub__(self, other):
         return Number(self.value - other.value)
 
-     Overload *
+*     Overload *
     def __mul__(self, other):
         return Number(self.value * other.value)
 
-     Overload /
+*     Overload /
     def __truediv__(self, other):
         if other.value == 0:
             raise ValueError("Cannot divide by zero!")
         return Number(self.value / other.value)
 
-     Overload ==
+*     Overload ==
     def __eq__(self, other):
         return self.value == other.value
 
-     Overload str() for readable output
+*     Overload str() for readable output
     def __str__(self):
         return f"Number({self.value})"
 
-     Overload repr() for debugging output
+*     Overload repr() for debugging output
     def __repr__(self):
         return f"Number(value={self.value})"
 
